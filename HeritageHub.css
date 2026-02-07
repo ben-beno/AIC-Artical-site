@@ -1,0 +1,1685 @@
+/* ===================================================
+   GLOBAL VARIABLES
+=================================================== */
+:root {
+    --primary-bg: #f6e3c5;
+    --accent-dark: #0f2540;
+    --accent-muted: #bfa98b;
+    --card-bg:#f6e3c5;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --card-hover-shadow: rgba(0, 0, 0, 0.2);
+    --text-color: #000000;
+}
+
+/* ===================================================
+   MAIN CONTAINER
+=================================================== */
+.explore-heritage {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.explore-heritage .page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.explore-heritage .page-intro {
+    font-size: 1.1rem;
+    color: var(--accent-dark);
+}
+
+/* ===================================================
+   GRID AND CARDS
+=================================================== */
+.explore-heritage .row {
+    margin-top: 2rem;
+}
+
+.heritage-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 1.0rem;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.heritage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--card-hover-shadow);
+}
+
+.heritage-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #000000;
+}
+
+.heritage-desc {
+    font-size: 0.95rem;
+    color: #000000;
+    line-height: 1.5;
+}
+
+/* ===================================================
+   RESPONSIVE GRID
+=================================================== */
+@media (max-width: 992px) {
+    .heritage-card {
+        padding: 1.2rem;
+    }
+
+    .heritage-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .heritage-card {
+        padding: 1rem;
+    }
+
+    .heritage-title {
+        font-size: 1.1rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-intro {
+        font-size: 1rem;
+    }
+}
+.heritage-spa-content {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Sidebar */
+.heritage-sidebar {
+  width: 280px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.heritage-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.heritage-sidebar li {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.heritage-sidebar li:hover,
+.heritage-sidebar li.active {
+  background: var(--accent-dark);
+  color: white;
+}
+
+/* Detail area */
+.heritage-detail {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.heritage-detail .hero-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+ 
+}
+
+.heritage-detail .hero-image img {
+  width: 120%;
+  height: 150%;
+  object-fit: cover;
+}
+
+.heritage-detail h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.heritage-detail p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Scrollbar Styling */
+.heritage-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+.heritage-sidebar::-webkit-scrollbar-thumb {
+  background: var(--accent-muted);
+  border-radius: 4px;
+}
+.heritage-sidebar::-webkit-scrollbar-track {
+  background:  #bfa98b;
+}
+ /* Hero Image Container */
+.heritage-detail .hero-image {
+  position: relative;
+  width: 100%;
+  min-height: 490px;
+  background-color: #000;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+
+
+.heritage-detail .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7; 
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-text {
+  position: relative; 
+  z-index: 2; 
+  padding: 3rem 2rem;
+  color: #ffffff; 
+  text-align: left;
+  max-width: 90%;
+}
+
+.hero-text h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+
+  color: #0f2540;
+  /*  -webkit-text-stroke: 0.5px #ffffff; /* White outline */
+
+  /* Fallback for browsers without text-stroke */
+  text-shadow:
+    -1px -1px 0 #ffffff,
+     1px -1px 0 #ffffff,
+    -1px  1px 0 #ffffff,
+     1px  1px 0 #ffffff;
+}
+
+.hero-text p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #f1f1f1;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.hero-image {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* Improve image visibility */
+    filter: brightness(1.45) contrast(1.05) saturate(1.1);
+}
+
+/* Soft dark overlay for text readability */
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.55)
+    );
+    z-index: 1;
+}
+     .heritage-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+
+  width: 100%;
+  max-width: 1400px;   /* ⬅ INCREASE WIDTH */
+  padding: 20px 40px;
+
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.brand-logo {
+  width: 100px;
+  height: 80px;
+  background-color: #0f172a;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+}
+
+.brand-text {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #000000;
+}
+
+.brand-title {
+  font-size: 50px;
+  letter-spacing: 3px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.brand-tagline {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.divider {
+  font-size: 30px;
+}
+
+@media (max-width: 767px) {
+  .brand-container {
+    flex-direction: column; /* stack logo and text */
+    align-items: center;    /* center all */
+    gap: 12px;
+   
+  }
+
+  .brand-logo {
+    width: 80px;
+    height: 80px;         /* keep square on mobile */
+    font-size: 24px;
+  }
+
+  .brand-title {
+    font-size: 28px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .brand-tagline {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .divider {
+    font-size: 20px;
+  }
+}
+/* ============================================= */
+/* COLLECTIONS PAGE SPECIFIC STYLES              */
+/* Extracted & cleaned from exhibition.css       */
+/* Only relevant to hero collage + sidebar + text*/
+/* ============================================= */
+
+/* Hero Collage Container */
+.hero-container {
+    position: relative;
+    height: 530px;          /* desktop starting height */
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.collage-img {
+    position: absolute;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Desktop collage positions (min-width 768px) */
+@media (min-width: 768px) {
+    .hero-container {
+        height: 550px;      /* adjust if needed */
+    }
+
+    .collage-img:nth-child(1) { width: 300px; height: 220px; top: 0px;    left: 220px; }
+    .collage-img:nth-child(2) { width: 280px; height: 240px; top: 170px;  left: 50px;  }
+    .collage-img:nth-child(3) { width: 250px; height: 360px; top: 100px;  left: 420px; }
+    .collage-img:nth-child(4) { width: 320px; height: 260px; top: 300px;  right: 80px; left: auto; }
+}
+
+/* Mobile collage – stack / responsive (max-width 767px) */
+@media (max-width: 767px) {
+    .hero-container {
+        height: auto;
+        padding: 20px 0;
+        margin-bottom: 2rem;
+    }
+
+    .collage-img {
+        position: relative !important;
+        width: 90% !important;
+        max-width: 350px;
+        height: auto !important;
+        margin: 15px auto !important;
+        display: block !important;
+        left: auto !important;
+        top: auto !important;
+        right: auto !important;
+        transform: none !important;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        border-radius: 12px;
+    }
+
+    .hero-text-content {
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .hero-text-content h1 {
+        font-size: 2.5rem !important;
+    }
+
+    .hero-text-content h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Sidebar (desktop) */
+.sidebar {
+    /* optional: add if you want more styling */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    text-align: right;
+}
+
+/* Intro box - red header */
+.intro-box {
+    background-color: #dc2626; /* red-600 */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.875rem; /* text-sm */
+    padding: 0.75rem 1rem;
+    text-align: center;
+    border-radius: 6px;
+}
+
+/* Mobile sidebar (block md:hidden) already has good tailwind, minimal extra needed */
+@media (max-width: 767px) {
+    .sidebar { display: none !important; } /* hide desktop sidebar in mobile */
+}
+
+/* Hero text content */
+.hero-text-content p {
+    text-align: justify;
+}
+
+@media (max-width: 767px) {
+    .hero-text-content p {
+        text-align: left;
+    }
+}
+
+/* Optional: Let us begin section if you use later */
+.let-us-begin {
+    font-family: 'Inter', 'Noto Sans Tamil', sans-serif;
+}
+
+.let-us-begin .tamil-text {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #111;
+}
+
+.let-us-begin .english-text {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #111;
+    letter-spacing: 0.4em;
+}
+
+@media (max-width: 768px) {
+    .let-us-begin .tamil-text { font-size: 1.6rem; }
+    .let-us-begin .english-text { font-size: 1.2rem; letter-spacing: 0.25em; }
+}
+@media (max-width: 767px) {
+    aside.col-span-1 {
+        text-align: center;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb; /* optional light line */
+        padding-bottom: 1.5rem;
+    }
+    
+    aside.col-span-1 ul li {
+        padding: 0.5rem 0;
+    }
+}
+
+@media (min-width: 768px) {
+    aside.col-span-1 ul li a {
+        padding: 0.5rem 0;
+    }
+}
+@media (min-width: 768px) {
+  .mobile-sidebar {
+    display: none !important;
+  }
+}
+/* Sidebar - exhibition maathiri right aligned + dot */
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    text-align: right;           /* <--- important */
+    position: relative;
+    padding-right: 1.5rem;
+}
+
+.sidebar li.active .intro-box {
+    background-color: #dc2626;   /* red */
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Small dot for non-active items - right side la */
+.sidebar li:not(.active)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #aaa;
+}
+
+/* Intro box common style */
+.intro-box {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+/* Hero container height - mobile la auto aakku */
+.hero-container {
+    position: relative;
+    height: 530px;          /* desktop */
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    .hero-container {
+        height: auto !important;
+        padding: 1.5rem 0;
+        margin-bottom: 2rem;
+    }
+    
+    .collage-img {
+        position: relative !important;
+        width: 85% !important;
+        height: auto !important;
+        margin: 15px auto !important;
+        display: block !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+        border-radius: 10px;
+    }
+    
+    .sidebar { 
+        display: none !important; 
+    }
+}
+@media (min-width: 768px) {
+    .collage-img:nth-child(1) { width: 300px; height: 220px; top: 20px;  left: 180px; }
+    .collage-img:nth-child(2) { width: 280px; height: 240px; top: 180px; left: 30px;  }
+    .collage-img:nth-child(3) { width: 260px; height: 340px; top: 80px;  left: 400px; }
+    .collage-img:nth-child(4) { width: 320px; height: 260px; top: 320px; right: 60px; left: auto; }
+}
+.sidebar li {
+    text-align: right;
+    position: relative;
+    padding-right: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar li:not(.active)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #aaa;
+}
+
+.sidebar li.active .intro-box {
+    background-color: #dc2626;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: bold;
+}
+.js-spa-link {
+    transition: color 0.2s;
+}
+
+.js-spa-link.active {
+    color: #dc2626 !important;       /* red-600 */
+    font-weight: 800 !important;
+    border-left: 4px solid #dc2626;
+    padding-left: 8px;
+}
+/* Make sure cards look good in swiper */
+.governanceSwiper .swiper-slide {
+    height: auto;
+}
+
+.heritage-card {
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.heritage-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* Title styling inside single box */
+.classification-title {
+    font-size: 2.1rem;
+    margin: 2.5rem 0 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 3px solid #dc2626;
+    text-align: center;
+}
+
+/* First title no top margin */
+.classification-title:first-child {
+    margin-top: 0.5rem;
+}
+.classification-box {
+  padding: 2.5rem 1.8rem !important;
+  background: #f8f1e9;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 15px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background: #666 !important;
+  opacity: 0.6 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #dc2626 !important;
+  opacity: 1 !important;
+}
+/* ────────────────────────────────────────────────
+   NEW: Classification Box + Centered Title
+───────────────────────────────────────────────── */
+
+.classification-box {
+    background:  #e6dacc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem 1.25rem;
+    margin: 0 auto 2.5rem auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.classification-title {
+    color: #0f2540;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-align: center !important;
+    margin: 0 0 1.5rem 0;
+    padding: 0.5rem 0;
+    font-size: clamp(1.6rem, 4.2vw, 2.25rem);
+    border-bottom: 3px solid #dc2626;
+    padding-bottom: 0.75rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+/* Remove left border/padding that might exist from older rules */
+.classification-title {
+    padding-left: 0 !important;
+    border-left: none !important;
+}
+
+/* Make sure section itself has no extra margin/padding conflict */
+.classification-section {
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile adjustments for boxes */
+@media (max-width: 767px) {
+    .classification-box {
+        padding: 1.25rem 1rem;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+    }
+
+    .classification-title {
+        font-size: clamp(1.4rem, 5vw, 1.85rem);
+        margin-bottom: 1.2rem;
+    }
+
+    .governanceSwiper {
+        padding-bottom: 80px !important;
+    }
+}
+
+/* Optional: subtle hover effect on the whole box */
+.classification-box:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+    transition: all 0.25s ease;
+}
+
+/* Ensure swiper dots stay visible below cards */
+.governanceSwiper {
+    min-height: 400px;
+    padding-bottom: 100px !important;
+}
+
+@media (max-width: 767px) {
+    .governanceSwiper {
+        min-height: 360px;
+        padding-bottom: 80px !important;
+    }
+    .governanceSwiper .swiper-pagination {
+        bottom: 15px !important;
+    }
+}
+
+
+.classification-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #dc2626 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position 0.8s ease;
+}
+
+.classification-title:hover::after {
+    background-position: 0% 0;
+}
+/* Make the line appear when hovering ANYWHERE in the box */
+.classification-box:hover .classification-title::after {
+    width: 120px;          /* or 100%, 140px, whatever you prefer */
+}
+
+/* If you used scaleX version */
+.classification-box:hover .classification-title::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* If you used left-to-right version */
+.classification-box:hover .classification-title::after {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+
+    .classification-box {
+        padding: 1rem 0.8rem;           
+        margin: 0 0.5rem 2rem 0.5rem;   
+        overflow: hidden;               
+        border-radius: 12px;
+    }
+
+    .governanceSwiper {
+        width: 100%;
+        padding: 0 !important;          
+        overflow: visible !important;   
+        padding-bottom: 60px !important; 
+    }
+
+    .governanceSwiper .swiper-slide {
+        width: 85% !important;        
+        max-width: 320px !important;    
+        margin-right: 55px !important; 
+    }
+
+    .governanceSwiper .swiper-slide:last-child {
+        margin-right: 0 !important;
+    }
+
+    .governanceSwiper .book-card {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+    }
+
+    .governanceSwiper .swiper-wrapper {
+        justify-content: flex-start !important;
+    }
+
+    .governanceSwiper .swiper-pagination {
+        bottom: 12px !important;
+        padding: 8px 0;
+    }
+
+    .governanceSwiper .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+    }
+}
+@media (max-width: 767px) {
+    .governanceSwiper {
+        --swiper-slide-width: 88% !important;   
+    }
+
+    .governanceSwiper .swiper-slide {
+        width: var(--swiper-slide-width) !important;
+        opacity: 0.75;                         
+        transition: opacity 0.3s ease;
+    }
+
+    .governanceSwiper .swiper-slide-active {
+        opacity: 1;                             /* center card full bright */
+    }
+}
+/* Swiper container correct size & no stretch */
+.extra-cards-swiper {
+  width: 100%;
+  padding: 0 10px 50px 10px; /* bottom space for dots */
+  overflow: hidden;
+}
+
+.extra-cards-swiper .swiper-wrapper {
+  transition-timing-function: linear !important; /* smooth feel */
+}
+
+.extra-cards-swiper .swiper-slide {
+  width: auto !important;           /* no full stretch */
+  height: auto !important;
+  display: flex;
+  align-items: stretch;
+}
+
+.extra-cards-swiper .heritage-card {
+  width: 320px !important;          /* fixed card width - change if needed */
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Mobile la swiper cards almost full width but swipe able */
+@media (max-width: 767px) {
+  .extra-cards-swiper .swiper-slide {
+    width: 85vw !important;
+  }
+  .extra-cards-swiper .heritage-card {
+    width: 100% !important;
+  }
+}
+
+/* Pagination dots fix - visible & bottom la */
+.extra-cards-swiper .swiper-pagination {
+  position: relative !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin-top: 15px !important;
+  text-align: center;
+  display: block !important; /* force visible */
+}
+
+.extra-cards-swiper .swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background: #888 !important;
+  opacity: 0.7 !important;
+  margin: 0 8px !important;
+  border-radius: 50%;
+}
+
+.extra-cards-swiper .swiper-pagination-bullet-active {
+  background: #dc2626 !important;
+  opacity: 1 !important;
+}
+
+/* Hide swiper if no extra cards (optional) */
+.extra-cards-swiper:empty {
+  display: none;
+}
+/* Title styling inside single box */
+.classification-title {
+    font-size: 2.1rem;
+    margin: 2.5rem 0 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 3px solid #dc2626;
+    text-align: center;
+}
+
+/* First title no top margin */
+.classification-title:first-child {
+    margin-top: 0.5rem;
+}
+.classification-box {
+  padding: 2.5rem 1.8rem !important;
+  background: #f8f1e9;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 15px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background: #666 !important;
+  opacity: 0.6 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #dc2626 !important;
+  opacity: 1 !important;
+}
+/* ────────────────────────────────────────────────
+   NEW: Classification Box + Centered Title
+───────────────────────────────────────────────── */
+
+.classification-box {
+    background:  #e6dacc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem 1.25rem;
+    margin: 0 auto 2.5rem auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.classification-title {
+    color: #0f2540;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-align: center !important;
+    margin: 0 0 1.5rem 0;
+    padding: 0.5rem 0;
+    font-size: clamp(1.6rem, 4.2vw, 2.25rem);
+    border-bottom: 3px solid #dc2626;
+    padding-bottom: 0.75rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+/* Remove left border/padding that might exist from older rules */
+.classification-title {
+    padding-left: 0 !important;
+    border-left: none !important;
+}
+
+/* Make sure section itself has no extra margin/padding conflict */
+.classification-section {
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile adjustments for boxes */
+@media (max-width: 767px) {
+    .classification-box {
+        padding: 1.25rem 1rem;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+    }
+
+    .classification-title {
+        font-size: clamp(1.4rem, 5vw, 1.85rem);
+        margin-bottom: 1.2rem;
+    }
+
+    .governanceSwiper {
+        padding-bottom: 80px !important;
+    }
+}
+
+/* Optional: subtle hover effect on the whole box */
+.classification-box:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+    transition: all 0.25s ease;
+}
+
+/* Ensure swiper dots stay visible below cards */
+.governanceSwiper {
+    min-height: 400px;
+    padding-bottom: 100px !important;
+}
+
+@media (max-width: 767px) {
+    .governanceSwiper {
+        min-height: 360px;
+        padding-bottom: 80px !important;
+    }
+    .governanceSwiper .swiper-pagination {
+        bottom: 15px !important;
+    }
+}
+
+
+.classification-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #dc2626 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position 0.8s ease;
+}
+
+.classification-title:hover::after {
+    background-position: 0% 0;
+}
+/* Make the line appear when hovering ANYWHERE in the box */
+.classification-box:hover .classification-title::after {
+    width: 120px;          /* or 100%, 140px, whatever you prefer */
+}
+
+/* If you used scaleX version */
+.classification-box:hover .classification-title::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* If you used left-to-right version */
+.classification-box:hover .classification-title::after {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+
+    .classification-box {
+        padding: 1rem 0.8rem;           
+        margin: 0 0.5rem 2rem 0.5rem;   
+        overflow: hidden;               
+        border-radius: 12px;
+    }
+
+    .governanceSwiper {
+        width: 100%;
+        padding: 0 !important;          
+        overflow: visible !important;   
+        padding-bottom: 60px !important; 
+    }
+
+    .governanceSwiper .swiper-slide {
+        width: 85% !important;        
+        max-width: 320px !important;    
+        margin-right: 55px !important; 
+    }
+
+    .governanceSwiper .swiper-slide:last-child {
+        margin-right: 0 !important;
+    }
+
+    .governanceSwiper .book-card {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+    }
+
+    .governanceSwiper .swiper-wrapper {
+        justify-content: flex-start !important;
+    }
+
+    .governanceSwiper .swiper-pagination {
+        bottom: 12px !important;
+        padding: 8px 0;
+    }
+
+    .governanceSwiper .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+    }
+}
+@media (max-width: 767px) {
+    .governanceSwiper {
+        --swiper-slide-width: 88% !important;   
+    }
+
+    .governanceSwiper .swiper-slide {
+        width: var(--swiper-slide-width) !important;
+        opacity: 0.75;                         
+        transition: opacity 0.3s ease;
+    }
+
+    .governanceSwiper .swiper-slide-active {
+        opacity: 1;                             /* center card full bright */
+    }
+}
+/* Force Swiper pagination visible & styled */
+.governanceSwiper .swiper-pagination {
+  position: relative !important;
+  bottom: 0 !important;
+  margin-top: 20px !important;
+  text-align: center;
+  display: block !important;
+  padding: 10px 0;
+}
+
+.governanceSwiper .swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background: #787878 !important;
+  opacity: 1 !important;
+  margin: 0 8px !important;
+  border-radius: 50%;
+}
+
+.governanceSwiper .swiper-pagination-bullet-active {
+  background: #dc2626 !important; /* red active dot */
+  opacity: 2 !important;
+}
+
+/* Ensure slides don't stretch */
+.governanceSwiper .swiper-slide {
+  width: auto !important;
+  height: auto !important;
+}
+
+.governanceSwiper .heritage-card {
+  width: 320px !important; /* fixed width - adjust if needed */
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+/* Mobile swipe feel */
+@media (max-width: 767px) {
+  .governanceSwiper .swiper-slide {
+    width: 85vw !important;
+  }
+  .governanceSwiper .heritage-card {
+    width: 100% !important;
+  }
+}
+/* IMPORTANT: Make swiper slides side by side */
+.governanceSwiper .swiper-wrapper {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+}
+
+.governanceSwiper .swiper-slide {
+  width: 33.33% !important;           /* desktop la 3 side by side */
+  min-width: 300px !important;        /* card min size */
+  flex: 0 0 auto !important;
+  padding: 0 10px !important;         /* gap between cards */
+  box-sizing: border-box !important;
+}
+
+/* Mobile la 1 or 1.2 cards visible + swipe */
+@media (max-width: 767px) {
+  .governanceSwiper .swiper-slide {
+    width: 85% !important;            /* almost full width for swipe feel */
+    min-width: 85vw !important;
+  }
+}
+
+/* Make sure cards don't stretch */
+.governanceSwiper .heritage-card {
+  width: 100%}
+  
+  /* Dropdown animation */
+#more-collections-dropdown {
+    transform-origin: top right;
+}
+
+#more-collections-dropdown[style*="block"] {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+/* Arrow rotate animation */
+.toggle-dropdown .arrow {
+    display: inline-block;
+}
+
+.toggle-dropdown[aria-expanded="true"] .arrow,
+#more-collections-dropdown[style*="block"] ~ .toggle-dropdown .arrow {
+    transform: rotate(180deg);
+}
+classification-box,
+.classification-section {
+  overflow: visible !important;
+}
+/* ===============================
+   MOBILE CARD OPTIMIZATION
+   =============================== */
+@media (max-width: 640px) {
+
+  /* swiper container */
+  .governanceSwiper {
+    padding-bottom: 32px;
+  }
+
+  /* card size reduce */
+  .heritage-card {
+    border-radius: 10px;
+  }
+
+  /* image height small */
+  .heritage-card img {
+    height: 160px;
+    object-fit: cover;
+  }
+
+  /* content padding reduce */
+  .heritage-card .card-content {
+    padding: 10px 12px;
+  }
+
+  /* title smaller */
+  .heritage-title {
+    font-size: 15px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  /* tamil + english text smaller */
+  .heritage-card .tamil,
+  .heritage-card .heritage-desc {
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+
+  /* pagination dots center & visible */
+  .governanceSwiper .swiper-pagination {
+    bottom: 4px;
+  }
+}
+
+.intro-box {
+    background-color: #dc2626; /* same as sidebar active */
+    color: white;
+    padding: 0.5rem 1rem;       /* adjust padding */
+    border-radius: 6px;         /* rounded corners */
+    display: inline-block;      /* shrink to content width */
+    font-weight: bold;
+    text-transform: uppercase;  /* like your current uppercase */
+    text-align: center;         /* center text */
+    margin-bottom: 1rem;        /* space below */
+    font-size: 0.875rem;        /* same as text-sm */
+}
+.js-spa-link {
+    transition: color 0.2s;
+}
+
+.js-spa-link.active {
+    color: #dc2626 !important;       /* red-600 */
+    font-weight: 800 !important;
+    border-left: 4px solid #dc2626;
+    padding-left: 8px;
+}
+/* Mobile Responsive Fixes */
+@media (max-width: 767px) {
+    /* Card size small */
+    .heritage-card {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto 1.5rem auto;
+        padding: 0.8rem !important;
+        border-radius: 10px;
+    }
+
+    .heritage-card img {
+        height: 150px !important;
+        object-fit: cover;
+    }
+
+    .heritage-title {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .heritage-desc, .tamil {
+        font-size: 0.9rem !important;
+        line-height: 1.4;
+    }
+
+@media (max-width: 767px) {
+    .hero-container {
+        height: auto !important;
+        padding: 1rem 0 2rem 0;
+        margin-bottom: 2rem;
+    }
+
+    .collage-img {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 85% !important;           /* 92% irunthu 85% reduce panniten – better balance */
+        max-width: 150px !important;     /* max cap 360px – ippo too big aagathu */
+        height: auto !important;
+        margin: 1rem auto !important;    /* images oda gap nalla balanced */
+        display: block !important;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+
+    /* Last image bottom la extra breathing space */
+    .collage-img:last-child {
+        margin-bottom: 1.5rem;
+    }
+}
+    /* Swiper mobile - 1 card per view */
+    .governanceSwiper {
+        --slides-per-view: 1 !important;
+    }
+
+    /* Sidebar mobile tweaks if needed */
+    .sidebar li {
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 767px) {
+    /* Card height reduce pannu – compact look */
+    .heritage-card {
+        height: auto !important;           /* auto iruntha better, but force pannalaam */
+        min-height: unset !important;      /* any min-height iruntha remove */
+        margin-bottom: 1.5rem;
+    }
+
+    /* Image height small aakku – main height reducer */
+    .heritage-card img {
+        height: 70px !important;          /* try 140px first, too small na 160px aakku */
+        object-fit: cover;
+    }
+
+    /* Card content compact aakku */
+    .card-content {
+        padding: 10px !important;          /* 1rem iruntha 12px aakku */
+    }
+
+    .heritage-title {
+        font-size: 1.05rem !important;     /* 1.3rem iruntha small aakku */
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+
+    .heritage-desc,
+    .tamil {
+        font-size: 0.875rem !important;    /* 0.95rem iruntha 14px approx */
+        line-height: 1.2;
+    }
+
+    /* If card still tall – flex use pannu to control */
+    .heritage-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* Swiper slide height auto follow pannum */
+    .governanceSwiper .swiper-slide {
+        height: auto !important;
+    }
+}
+/* Brand section – base styles (desktop friendly) */
+.heritage-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 1.5rem auto 2.5rem auto;   /* collage kku kila space correct ah varum */
+    padding: 20px 30px;
+    flex-wrap: nowrap;                 /* important: desktop la side-by-side force */
+    background: transparent;           /* if any bg issue iruntha */
+}
+
+/* Desktop la full control */
+@media (min-width: 768px) {
+    .heritage-brand {
+        flex-direction: row;           /* logo left, title right */
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 3rem;           /* collage kku extra breathing space */
+    }
+
+    .brand-text {
+        text-align: left;
+    }
+
+    .brand-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        white-space: nowrap;           /* title full line la irukkum, collapse aagathu */
+    }
+
+    .brand-logo {
+        flex-shrink: 0;
+    }
+}
+
+/* Mobile la mattum stack + center + collage kku just kila */
+@media (max-width: 767px) {
+    .heritage-brand {
+        flex-direction: column !important;  /* stack pannu */
+        gap: 15px;
+        padding: 15px 20px;
+        margin: 1rem auto 2rem auto;       /* collage kku correct space */
+        justify-content: center;
+        text-align: center;
+    }
+
+    .brand-text,
+    .brand-title {
+        text-align: center !important;
+    }
+
+    .brand-title {
+        font-size: clamp(1.5rem, 6.5vw, 2.4rem);
+        letter-spacing: 1.2px;
+    }
+
+    .brand-logo img {
+        width: 65px;
+        height: auto;
+    }
+
+    /* Collage oda top la space adjust – collapse avoid */
+    .hero-container {
+        margin-top: 0.5rem !important;
+        padding-top: 0 !important;
+    }
+}
+/* Mobile la mattum title font size reduce pannu (oru line la irukura section) */
+@media (max-width: 767px) {
+    .heritage-brand {
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;                    /* logo & title gap konjam tight aakku if needed */
+        padding: 10px 15px;
+        margin: 1rem auto 1.5rem auto;
+        flex-wrap: nowrap;
+    }
+
+    .brand-logo img {
+        width: 35px !important;       /* logo konjam small – adjust panniko */
+        height: auto;
+    }
+
+    .brand-title {
+        font-size: clamp(1rem, 4.5vw, 1rem) !important;  /* ippo romba chinnatha aagum */
+        /* Possible sizes try pannu: */
+        /* 1.0rem → very small */
+        /* 1.2rem → medium small */
+        /* 1.3rem → balanced small */
+        letter-spacing: 0.8px;
+        white-space: nowrap;
+        margin: 0;
+        line-height: 1.2;
+    }
+}
+/* ────────────────────────────────────────────────
+   ADDITIONAL MOBILE RESPONSIVE IMPROVEMENTS
+   (only affects ≤ 767px – desktop untouched)
+───────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+
+
+  /* ── Collage – stacked, centered, reasonable size ── */
+  .hero-container {
+    height: auto !important;
+    padding: 16px 0 24px;
+    margin-bottom: 32px;
+    overflow: visible !important;
+  }
+
+  .collage-img {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 250px !important;
+    height: auto !important;
+    margin: 10px auto !important;
+    display: block !important;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.14);
+    opacity: 1 !important;
+  }
+
+  /* ── Cards – more compact like collection sample ── */
+  .heritage-card {
+    border-radius: 10px;
+    padding: 0 !important;
+    margin-bottom: 24px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  }
+
+  .heritage-card img {
+    height: 148px !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .card-content {
+    padding: 12px 14px 16px !important;
+  }
+
+  .heritage-title {
+    font-size: 1.05rem !important;
+    margin-bottom: 6px;
+    line-height: 1.28;
+  }
+
+  .heritage-desc,
+  .tamil {
+    font-size: 0.86rem !important;
+    line-height: 1.38;
+  }
+
+  /* ── Swiper – one centered card visible + swipe others ── */
+  .governanceSwiper {
+    padding: 0 0 60px !important;
+    overflow: visible !important;
+  }
+
+  .governanceSwiper .swiper-slide {
+    width: 86% !important;
+    max-width: 340px !important;
+    opacity: 0.68;
+    transition: opacity 0.28s ease;
+  }
+
+  .governanceSwiper .swiper-slide-active {
+    opacity: 1;
+  }
+
+  .governanceSwiper .heritage-card {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+
+  /* Pagination – visible & styled like sample */
+  .governanceSwiper .swiper-pagination {
+    bottom: 12px !important;
+    position: absolute !important;
+  }
+
+  .swiper-pagination-bullet {
+    width: 9px !important;
+    height: 9px !important;
+    background: #888 !important;
+    opacity: 0.9 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #dc2626 !important;
+    opacity: 1 !important;
+  }
+
+  /* ── Classification box – sample style ── */
+  .classification-box {
+    padding: 1.1rem 1rem;
+    margin: 0 8px 28px;
+    border-radius: 10px;
+  }
+
+  .classification-title {
+    font-size: clamp(1.35rem, 5.2vw, 1.8rem);
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.6rem;
+  }
+
+  /* ── Prevent unwanted horizontal scroll ── */
+  html, body, .explore-heritage {
+    overflow-x: hidden;
+  }
+}
+@media (max-width: 767px) {
+  .governanceSwiper,
+  .governanceSwiper .swiper-wrapper,
+  .governanceSwiper .swiper-slide {
+    touch-action: pan-y pan-x;           /* vertical page scroll + horizontal swipe allow */
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Active card la horizontal touch priority kudukku */
+  .governanceSwiper .swiper-slide-active {
+    touch-action: pan-x;
+  }
+
+  /* Prevent accidental page scroll while swiping */
+  .governanceSwiper:active,
+  .governanceSwiper:focus-within {
+    touch-action: pan-x;
+  }
+}
+@media (max-width: 767px) {
+  /* Swiper container full control – ella card um hide aagum except active */
+  .governanceSwiper {
+    width: 100% !important;
+    overflow: hidden !important;           /* important – extra cards hide pannum */
+    padding: 0 0 70px 0 !important;        /* bottom space pagination ku */
+    position: relative;
+  }
+
+  /* Each slide – only active one full visible */
+  .governanceSwiper .swiper-slide {
+    width: 85% !important;                 /* not 100%, edge la space irukkum */
+    max-width: 340px !important;
+    margin: 0 auto !important;             /* center force */
+    opacity: 0.5 !important;               /* non-active dim */
+    transition: opacity 0.4s ease;
+    transform: scale(0.92) !important;     /* extra visual cue for non-active */
+  }
+
+  .governanceSwiper .swiper-slide-active {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+  }
+
+  /* Pagination – force visible & position correct */
+  .governanceSwiper .swiper-pagination {
+    position: absolute !important;
+    bottom: 15px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+    z-index: 10 !important;                /* top la varum */
+    padding: 10px 0 !important;
+    display: block !important;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+    background: #999 !important;
+    opacity: 0.7 !important;
+    margin: 0 6px !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #dc2626 !important;
+    opacity: 1 !important;
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
