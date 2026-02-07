@@ -1587,4 +1587,138 @@ footer .footer-bottom p {
     .brand-title {
         white-space: nowrap;           /* title full line la varum */
     }
+
+}
+
+
+/* Add this to reset defaults and prevent side spaces */
+* {
+    box-sizing: border-box; /* Ensures padding/margins don't add extra width */
+}
+
+body {
+    margin: 0; /* Removes default 8px browser margin causing side spaces */
+    padding: 0; /* No extra padding */
+    overflow-x: hidden; /* Prevents horizontal scroll/overflow on mobile */
+}
+
+/* Make images responsive to avoid overflows */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes bottom gap under images */
+}
+
+/* Adjust containers for mobile */
+.header-container, .container {
+    padding-left: 1rem; /* Reduce side padding on small screens */
+    padding-right: 1rem;
+}
+
+/* Fix footer gaps and side spaces */
+footer {
+    margin-top: 0; /* If there's extra top space */
+    padding: 2rem 1rem; /* Reduce top/bottom, add minimal side padding */
+}
+
+.footer-content {
+    gap: 1rem; /* Reduce grid gap to minimize vertical/horizontal gaps */
+    padding: 0; /* No extra padding */
+}
+
+.footer-section ul li {
+    margin-bottom: 0.25rem; /* Tighten list items if gaps are from margins */
+}
+
+/* Hero section adjustments */
+.hero-section {
+    padding: 1rem; /* Add if needed for mobile */
+}
+
+.hero-image img, .hero-image iframe {
+    width: 100%; /* Full width on mobile */
+}
+
+/* Mobile adjustments (for screens up to 768px, e.g., tablets/phones) */
+@media (max-width: 768px) {
+    /* General layout */
+    .header-container {
+        max-width: 100%; /* Full width */
+        padding: 0.5rem 1rem; /* Less padding for compact feel */
+    }
+
+    .logo img {
+        width: 80px; /* Smaller logo on mobile */
+        height: 80px;
+    }
+
+    .logo-text .ta {
+        font-size: 1.5rem; /* Smaller text */
+    }
+
+    .main-nav a {
+        padding: 0.5rem 1rem; /* Tighter nav if visible */
+    }
+
+    /* Hero section - reduce sizes to fit mobile */
+    .hero-content h1 {
+        font-size: 1.8rem; /* Smaller heading */
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .search-box input {
+        width: 100%; /* Full width search */
+    }
+
+    /* Featured grid - stack cards vertically */
+    .featured-grid {
+        display: flex;
+        flex-direction: column; /* Stack instead of side-by-side */
+        gap: 1rem;
+    }
+
+    .featured-card {
+        width: 100%; /* Full width cards */
+    }
+
+    /* Footer - reduce gaps and stack */
+    footer {
+        padding: 2rem 1rem 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* Ensure single column on mobile */
+        gap: 1.5rem; /* Adjust gap to reduce "gab" (gaps) */
+        padding: 0 0.5rem; /* Minimal side padding, no extra space */
+    }
+
+    .footer-section {
+        text-align: center; /* Center for better mobile look */
+    }
+
+    .footer-bottom {
+        padding-top: 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    /* Hide or adjust elements causing overflows */
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+/* Extra small screens (e.g., <600px for phones) */
+@media (max-width: 600px) {
+    /* Further tighten */
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .footer-content {
+        gap: 1rem; /* Even smaller gaps */
+    }
 }
