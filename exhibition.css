@@ -826,3 +826,161 @@
         left: 15vw;
     }
 }
+
+/* ================= MOBILE LAYOUT ================= */
+@media (max-width: 767px) {
+
+    /* Hide original sidebar */
+    aside.sidebar { display: none !important; }
+
+    /* Make content take full width */
+    .hero-text-content { 
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* Offcanvas Sidebar */
+    .mobile-sidebar {
+        position: fixed;
+        top: 0;
+        right: -100%;        /* hidden by default */
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #f6ece0; /* same as your card-bg or light cream */
+        box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+        transition: right 0.35s ease;
+        z-index: 2000;
+        overflow-y: auto;
+        padding: 2rem 1rem;
+    }
+
+    /* Active state slides in */
+    .mobile-sidebar.active { right: 0; }
+
+    /* Overlay behind sidebar */
+    .mobile-sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.5);
+        display: none;
+        z-index: 1999;
+    }
+    .mobile-sidebar-overlay.active { display: block; }
+
+    /* Sidebar links */
+    .mobile-sidebar ul { list-style: none; padding: 0; margin: 0; }
+    .mobile-sidebar li { margin-bottom: 1rem; }
+    .mobile-sidebar li a {
+        display: block;
+        text-align: left;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #111;
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+        transition: all 0.3s;
+    }
+    .mobile-sidebar li a:hover { background: #e6d3bd; color: #111; }
+
+    /* Sidebar title box */
+    .mobile-sidebar .intro-box {
+        margin-bottom: 2rem;
+        text-align: center;
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* Card image height auto & smaller for fit */
+    .grid img {
+        height: auto !important;
+        max-height: 220px;                                  /* prevent too tall cards */
+        object-fit: cover;
+    }
+
+    /* Card title & text smaller for mobile */
+    .grid h5 {
+        font-size: 1.1rem !important;
+    }
+    .grid p {
+        font-size: 0.8rem !important;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.8rem !important;
+    }
+    .grid img {
+        max-height: 160px !important;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr) !important;   /* desktop exact same */
+        gap: 1.5rem !important;
+    }
+}
+@media (max-width: 767px) {
+  /* Hide the text overlay inside the image cards */
+  .grid .relative .absolute h5,
+  .grid .relative .absolute p {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .heritage-brand {
+    display: flex;
+    flex-direction: column; /* stack lines */
+    align-items: flex-start; /* left-align everything */
+    gap: 0.25rem;
+    text-align: left;
+  }
+
+  /* First line: logo + title */
+  .heritage-brand .brand-logo,
+  .heritage-brand .brand-title {
+    display: inline-flex;
+    align-items: left;
+    gap: 0.5rem; /* space between logo and text */
+  }
+
+  .heritage-brand .brand-logo img {
+    width: 50px; /* smaller logo for mobile */
+    height: auto;
+  }
+
+  .heritage-brand .brand-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  /* Second line: tagline */
+  .heritage-brand .brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .heritage-brand .brand-tagline {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  /* hide dividers */
+  .heritage-brand .divider {
+    display: none;
+  }
+}
