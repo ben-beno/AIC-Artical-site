@@ -940,43 +940,8 @@
     display: none !important;
   }
 }
-@media (max-width: 767px) {
-  .heritage-brand {
-    display: flex;
-    flex-direction: column; /* stack lines */
-    align-items: flex-start; /* left-align */
-    gap: 0.25rem;
-  }
 
-  /* First line: logo + title */
-  .heritage-brand .brand-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
 
-  .heritage-brand .brand-logo img {
-    width: 50px; /* smaller logo for mobile */
-    height: auto;
-  }
-
-  .heritage-brand .brand-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-  }
-
-  /* Second line: tagline */
-  .heritage-brand .brand-tagline {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-left: 0;
-  }
-
-  /* Remove dividers */
-  .heritage-brand .divider {
-    display: none;
-  }
-}
 /* ================= DESKTOP GRID LOCK (FINAL FIX) ================= */
 @media (min-width: 768px) {
 
@@ -1030,14 +995,14 @@
 
   /* h2 – வணக்கம் */
   #content-area h2 {
-    font-size: 1.25rem !important;
+    font-size: 1rem !important;
     margin-bottom: 0.4rem !important;
   }
 
   /* h1 – main title */
   #content-area h1 {
     font-size: 1.7rem !important;
-    line-height: 1.2 !important;
+    line-height: 1 !important;
     margin-bottom: 0.8rem !important;
   }
 
@@ -1049,4 +1014,66 @@
   }
 
 }
+/* DEFAULT (DESKTOP) */
+#read-more-btn {
+  display: none;
+}
 
+/* Desktop: hide extra content after 2nd paragraph */
+@media (min-width: 768px) {
+  #read-more-btn {
+    display: inline-block;
+  }
+}
+
+/* MOBILE: hide everything after FIRST paragraph */
+@media (max-width: 767px) {
+
+  .intro-p2,
+  #more-content {
+    display: none;
+  }
+
+  #read-more-btn {
+    display: inline-block;
+  }
+}
+
+/* Mobile-only adjustments */
+@media (max-width: 767px) {
+  .heritage-brand {
+    display: flex;
+    flex-direction: column; /* stack lines */
+    align-items: flex-start; /* left-align */
+    gap: 0.25rem;
+  }
+
+  /* First line: logo + title */
+  .heritage-brand .brand-logo {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .heritage-brand .brand-logo img {
+    width: 50px; /* smaller logo for mobile */
+    height: auto;
+  }
+
+  .heritage-brand .brand-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  /* Second line: tagline */
+  .heritage-brand .brand-tagline {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 0;
+  }
+
+  /* Remove dividers */
+  .heritage-brand .divider {
+    display: none;
+  }
+}
