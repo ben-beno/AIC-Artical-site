@@ -900,7 +900,7 @@
     /* Card image height auto & smaller for fit */
     .grid img {
         height: auto !important;
-        max-height: 220px;                                  /* prevent too tall cards */
+        max-height: 220px;                               
         object-fit: cover;
     }
 
@@ -944,17 +944,15 @@
   .heritage-brand {
     display: flex;
     flex-direction: column; /* stack lines */
-    align-items: flex-start; /* left-align everything */
+    align-items: flex-start; /* left-align */
     gap: 0.25rem;
-    text-align: left;
   }
 
   /* First line: logo + title */
-  .heritage-brand .brand-logo,
-  .heritage-brand .brand-title {
-    display: inline-flex;
-    align-items: left;
-    gap: 0.5rem; /* space between logo and text */
+  .heritage-brand .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .heritage-brand .brand-logo img {
@@ -968,19 +966,87 @@
   }
 
   /* Second line: tagline */
-  .heritage-brand .brand-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
   .heritage-brand .brand-tagline {
     font-size: 1rem;
     font-weight: 500;
+    margin-left: 0;
   }
 
-  /* hide dividers */
+  /* Remove dividers */
   .heritage-brand .divider {
     display: none;
   }
 }
+/* ================= DESKTOP GRID LOCK (FINAL FIX) ================= */
+@media (min-width: 768px) {
+
+  /* Force parent to behave as grid */
+  .grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: flex-start;
+  }
+
+  /* Sidebar: left column */
+  aside.sidebar {
+    grid-column: 1 / span 1;
+    display: block !important;
+  }
+
+  /* Content: right 3 columns */
+  #content-area {
+    grid-column: 2 / span 3;
+    width: 100%;
+    max-width: none;
+  }
+
+}
+/* ================= MOBILE FONT SIZE FIX ================= */
+@media (max-width: 767px) {
+
+  /* h2 – வணக்கம் */
+  #content-area h2 {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* h1 – main heading */
+  #content-area h1 {
+    font-size: 1.9rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* paragraph text (text-lg override) */
+  #content-area .text-lg,
+  #content-area #intro-text p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+
+}
+/* ================= MOBILE TEXT SIZE – FINAL ================= */
+@media (max-width: 767px) {
+
+  /* h2 – வணக்கம் */
+  #content-area h2 {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  /* h1 – main title */
+  #content-area h1 {
+    font-size: 1.7rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  /* paragraph text (overrides text-lg) */
+  #content-area .text-lg,
+  #content-area #intro-text p {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+
+}
+
