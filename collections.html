@@ -275,7 +275,7 @@
     
     <div class="text-lg leading-relaxed text-black max-w-3xl">
         <div id="intro-text" class="intro-content">
-            <p class="mb-4">
+            <p class="mb-4 intro-p1">
                 <strong>The TIC Archives</strong> is an independent and authoritative digital archive of the Tamil Information Centre (TIC), dedicated to the collection, preservation,
                 and public access of historical, cultural, and human rights records relating to the Tamil-speaking people of Sri Lanka.
             </p>
@@ -283,7 +283,8 @@
                     Founded on the pioneering work of the Tamil Information Centre, established in London in 1979, the archive represents more than four decades of principled research, 
                     documentation, and human rights advocacy. It brings together first-hand, authentic, and verifiable materials gathered through the dedication and sacrifice of researchers,
                      activists, and community members who worked under challenging and often dangerous conditions to ensure that history, memory, and evidence were not lost.
-                </p>
+                </p>  <p class="mb-4 intro-p2">
+
                     At this crucial stage, as TIC fulfils a long-standing vision of its founders, pioneers, supporters, and the wider Tamil-speaking community,
                      The TIC Archives makes these invaluable collections publicly accessible for the first time. In doing so, the archive honours the memory and lifelong 
                      contributions of those who laid its foundations—including the late Mr. Kanthasamy, the late Mr. Varadakumar, and the late Fr. James Pathinathar, among many
@@ -953,6 +954,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+      const btn = document.getElementById("read-more-btn");
+  const more = document.getElementById("more-content");
+  const p2 = document.querySelector(".intro-p2");
+
+  btn.addEventListener("click", () => {
+    if (p2) p2.style.display = "block";
+    more.style.display = "block";
+    btn.style.display = "none";
+  });
+
 </script>
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/94712345678?text=Hi%20TIC%20Archives!%20I%20have%20a%20question%20about..." 
@@ -963,4 +974,5 @@ document.addEventListener('DOMContentLoaded', function () {
 </body>
 
 </html>
+
 
