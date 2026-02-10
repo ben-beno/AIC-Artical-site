@@ -361,14 +361,15 @@
     
     <div class="text-lg leading-relaxed mb-6 text-black max-w-3xl">
         <div id="intro-text" class="intro-content">
-            <p class="mb-4">
+                     <p class="mb-4 intro-p1">
+
 <b>Tamils of Lanka: </b>A Timeless Heritage is a major exhibition presented by The TIC Archives,
  reflecting the Tamil Information Centre’s enduring commitment to the preservation, documentation, 
  and public presentation of the history, culture, and human rights experiences of Tamil-speaking
   people of Sri Lanka (Ilankai).
             </p>
 
-                <p class="mb-4">
+           <p class="mb-4 intro-p2">
 Rooted in more than four decades of principled research, documentation, and advocacy, the exhibition
  draws upon the extensive archival holdings of the Tamil Information Centre to present a carefully curated and
   evidence-based narrative of Tamil history. Through primary sources, personal testimonies, cultural artefacts,
@@ -775,6 +776,30 @@ window.addEventListener('load', () => {
         }, 2000);
     }
 });
+    const sidebar = document.getElementById('mobileSidebar');
+const overlay = document.getElementById('mobileSidebarOverlay');
+const openBtn = document.getElementById('openSidebarBtn');
+
+openBtn.addEventListener('click', () => {
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+});
+
+overlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+});
+
+  const btn = document.getElementById("read-more-btn");
+  const more = document.getElementById("more-content");
+  const p2 = document.querySelector(".intro-p2");
+
+  btn.addEventListener("click", () => {
+    if (p2) p2.style.display = "block";
+    more.style.display = "block";
+    btn.style.display = "none";
+  });
+
 
 </script>
 <!-- WhatsApp Floating Button -->
@@ -786,3 +811,4 @@ window.addEventListener('load', () => {
 </body>
 
 </html>
+
