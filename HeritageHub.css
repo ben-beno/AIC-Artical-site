@@ -1899,3 +1899,23 @@ li.relative {
     align-items: center;
     gap: 30px;
 }             
+/* Tighten gap between logo and text on mobile only, without changing desktop or other UI */
+@media (max-width: 767px) {
+    .heritage-brand {
+        gap: 0 !important;  /* Reduce from 2px to 0 for minimal spacing */
+        padding: 8px 0 !important;  /* Keep vertical padding, but ensure no side overflow */
+        justify-content: flex-start !important;  /* Align left to prevent shifts */
+        align-items: center !important;  /* Center vertically for better text positioning */
+    }
+
+    .brand-text {
+        gap: 0 !important;  /* Reduce inner text gap from 1px to 0 */
+        margin-left: 0 !important;  /* Remove any left margin causing extra space */
+        text-align: left !important;  /* Align text left to hug the logo */
+    }
+
+    /* Optional: If the welcome text below is shifting due to header overflow */
+    .hero-text-content {
+        margin-top: 10px !important;  /* Slightly reduce top margin if needed for proximity */
+    }
+}
