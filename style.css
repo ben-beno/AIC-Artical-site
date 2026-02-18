@@ -1518,73 +1518,29 @@ footer .footer-bottom p {
         line-height: 1.4;       /* optional: make text more readable */
     }
 }
-/* Brand section – Desktop la side-by-side, Mobile la stack */
-.heritage-brand {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
+html, body {
     width: 100%;
-    max-width: 1400px;
-    margin: 0 auto 2rem auto;          /* collage kku kila space */
-    padding: 20px 40px;
-    flex-wrap: nowrap;                 /* desktop la no wrap */
-}
-
-.brand-logo {
-    flex-shrink: 0;                    /* logo squeeze aagathu */
-}
-
-.brand-text {
-    text-align: left;                  /* desktop la left align better look */
-}
-
-.brand-title {
-    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
-    font-weight: 500;
-    letter-spacing: 3px;
     margin: 0;
+    padding: 0;
+    overflow-x: hidden;   
+    box-sizing: border-box;
 }
 
-/* Mobile la mattum stack + center everything */
-@media (max-width: 767px) {
-    .heritage-brand {
-        flex-direction: column;        /* logo top, title bottom */
-        gap: 16px;
-        padding: 15px 20px;
-        margin-bottom: 1.5rem;
-        justify-content: center;
-        text-align: center;            /* full center */
-    }
+*, *::before, *::after {
+    box-sizing: border-box;  
+}
+/* ===== MOBILE FIX ONLY ===== */
+@media (max-width: 768px) {
 
-    .brand-text {
-        text-align: center;
-    }
+  .hero-image {
+    height: auto;          /* let it resize naturally */
+    overflow: hidden;      /* prevent image from spilling */
+  }
 
-    .brand-title {
-        font-size: clamp(1.6rem, 7vw, 2.2rem);
-        letter-spacing: 1.5px;
-    }
+  .hero-image-content {
+    width: 100%;           /* remove 110% overflow */
+    height: auto;
+  }
 
-    .brand-logo img {
-        width: 70px;
-        height: auto;
-    }
-
-    /* Collage oda top margin konjam adjust if needed */
-    .hero-container {
-        margin-top: 0.5rem !important;
-    }
 }
 
-/* Extra safety: desktop la wide screen la no collapse */
-@media (min-width: 768px) {
-    .heritage-brand {
-        flex-wrap: nowrap !important;
-        justify-content: center;
-    }
-
-    .brand-title {
-        white-space: nowrap;           /* title full line la varum */
-    }
-}
