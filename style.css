@@ -1543,4 +1543,22 @@ html, body {
   }
 
 }
+/* Prevent text cutoff on mobile without changing layout */
+.your-content-class {  /* Replace with your actual class, e.g., .content or .main-content */
+    overflow-wrap: break-word;  /* Breaks long words to next line */
+    word-break: break-word;     /* Alternative for stronger breaking, use if needed */
+    hyphens: auto;              /* Allows hyphenation for better flow */
+    max-width: 100%;            /* Ensures container doesn't exceed screen */
+}
+
+/* Optional: Media query for extra safety on small screens (under 768px, like mobiles) */
+@media (max-width: 768px) {
+    .your-content-class {
+        padding: 10px;  /* Add a bit of side padding if text hugs the edge, adjust as needed */
+    }
+}
+.your-parent-container {
+    flex-wrap: wrap;  /* Allows columns to stack on mobile if needed */
+}
+
 
