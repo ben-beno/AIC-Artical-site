@@ -131,10 +131,6 @@
         padding: 20px 0;
         margin-bottom: 2rem;
     }
-    .sidebar { display: none; }
-    .sections-grid, .bottom-sections {
-        grid-template-columns: 1fr !important;
-    }
     .hero-text-content p {
         text-align: left;
     }
@@ -160,10 +156,6 @@
     }
     
     
-    /* Sidebar hide in mobile */
-    .sidebar {
-        display: none !important;
-    }
     
     /* Text full width */
     .hero-text-content {
@@ -986,7 +978,7 @@
   #content-area .text-lg,
   #content-area #intro-text p {
     font-size: 0.95rem !important;
-    line-height: 1.6 !important;
+    line-height: 1.3 !important;
   }
 
 }
@@ -1010,7 +1002,7 @@
   #content-area .text-lg,
   #content-area #intro-text p {
     font-size: 0.9rem !important;
-    line-height: 1.6 !important;
+    line-height: 1.3 !important;
   }
 
 }
@@ -1039,41 +1031,187 @@
   }
 }
 
-/* Mobile-only adjustments */
+/* =========================================================
+   HERITAGE BRAND - MOBILE: LOGO & PART OF TEXT SAME LINE
+   ========================================================= */
+
+/* Desktop styles - unchanged */
+.heritage-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.heritage-brand {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  max-width: 1400px;
+  padding: 20px 40px;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.brand-logo {
+  width: 60px;
+  height: auto;
+}
+
+.brand-text {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #111;
+}
+
+.brand-title {
+  font-size: 50px;
+  letter-spacing: 3px;
+  font-weight: 500;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.brand-tagline {
+  font-size: 32px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.divider {
+  font-size: 30px;
+}
+
+/* MOBILE VIEW CHANGES ONLY */
 @media (max-width: 767px) {
   .heritage-brand {
     display: flex;
-    flex-direction: column; /* stack lines */
-    align-items: flex-start; /* left-align */
-    gap: 0.25rem;
+    flex-direction: row; /* Logo and text in same row */
+    align-items: flex-start; /* Align to top */
+    flex-wrap: wrap; /* Allow text to wrap to next line */
+    gap: 1px; /* Gap between logo and text */
+    padding: 10px 15px;
+    width: 100%;
   }
-
-  /* First line: logo + title */
-  .heritage-brand .brand-logo {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .heritage-brand .brand-logo img {
-    width: 50px; /* smaller logo for mobile */
+  
+  .brand-logo {
+    width: 40px;
     height: auto;
+    flex-shrink: 0; /* Logo won't shrink */
+    margin-top: 5px; /* Adjust vertical alignment */
   }
-
-  .heritage-brand .brand-title {
-    font-size: 1.2rem;
-    font-weight: 700;
+  
+  .brand-text {
+    display: flex;
+    flex-wrap: wrap; /* Allow text elements to wrap */
+    flex: 1; /* Take remaining space */
+    gap: 4px; /* Gap between text elements */
+    align-items: center;
+    min-width: 0; /* Allow to shrink */
   }
-
-  /* Second line: tagline */
-  .heritage-brand .brand-tagline {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-left: 0;
+  
+  /* Force all text elements to stay together initially */
+  .brand-title,
+  .brand-tagline,
+  .divider {
+    white-space: nowrap; /* Don't break within words */
+    flex-shrink: 0; /* Don't shrink individual elements */
   }
+  
+  .brand-title {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+  
+  .brand-tagline {
+    font-size: 18px;
+  }
+  
+  .divider {
+ display: none !important; /* Remove divider on mobile */  }
+  
+}
 
-  /* Remove dividers */
-  .heritage-brand .divider {
+/* Extra small screens - adjust text sizes */
+@media (max-width: 480px) {
+  .heritage-brand {
+    gap: 8px;
+    padding: 12px 15px;
+  }
+  
+  .brand-logo {
+    width: 35px;
+  }
+  
+  .brand-text {
+    gap: 3px;
+  }
+  
+  .brand-title {
+    font-size: 20px;
+  }
+  
+  .brand-tagline {
+    font-size: 16px;
+  }
+  
+  .divider {
+    font-size: 16px;
+  }
+}
+
+/* Very narrow screens - hide second divider to save space */
+@media (max-width: 360px) {
+  .divider:nth-of-type(2) {
     display: none;
   }
+  
+  .brand-title {
+    font-size: 12px;
+  }
+  
+  .brand-tagline {
+    font-size: 14px;
+  }
+}
+/* COMPLETE IMAGE BORDER REMOVAL */
+.brand-logo,
+.brand-logo img,
+.brand-logo * {
+  /* Remove borders */
+  border: none !important;
+  border-width: 0 !important;
+  border-style: none !important;
+  border-color: transparent !important;
+  
+  /* Remove outlines */
+  outline: none !important;
+  outline-width: 0 !important;
+  
+  /* Remove shadows */
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  
+  /* Remove rounded corners */
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  
+  /* Remove backgrounds */
+  background: none !important;
+  background-color: transparent !important;
+  
+  /* Remove any image-specific borders */
+  -webkit-image-border: none !important;
+  image-border: none !important;
+  
+  /* Remove decorative styles */
+  text-decoration: none !important;
+  text-shadow: none !important;
+  
+  /* Ensure proper display */
+  display: block;
+  margin: 0;
+  padding: 0;
 }
