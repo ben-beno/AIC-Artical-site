@@ -1,7 +1,3 @@
-/* ===================================================
-   Base Styles, Variables, and Typography (style.css)
-   =================================================== */
-
 /* 1. CSS Variables for Theme */
 :root {
     --primary-bg: #f6e3c5;        /* Light Cream/Beige (BODY & GAP BG) */
@@ -60,137 +56,6 @@ a:hover {
     color: var(--link-hover-color);
 }
 
-/* ===================================================
-   2. HEADER & NAVIGATION STYLES
-   =================================================== *
-
-/* Mobile Menu Button */
-.mobile-menu-btn {
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: var(--accent-dark);
-    cursor: pointer;
-    display: none; 
-}
-
-/* ===================================================
-   3. MOBILE OFFCANVAS STYLES
-   =================================================== */
-
-.mobile-nav-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.mobile-nav-overlay.active {
-    display: block;
-    opacity: 1;
-}
-
-.mobile-nav-offcanvas {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 300px;
-    max-width: 80vw;
-    height: 100%;
-    background-color: var(--card-bg);
-    z-index: 999;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.mobile-nav-offcanvas.active {
-    transform: translateX(0);
-}
-
-.mobile-nav-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-}
-
-.mobile-nav-close {
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: var(--text-color);
-    cursor: pointer;
-}
-
-.mobile-nav-menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.mobile-nav-menu li {
-    margin-bottom: 10px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.mobile-nav-menu li:last-child {
-    border-bottom: none;
-}
-
-.mobile-nav-menu a {
-    display: block;
-    padding: 10px 0;
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-.mobile-nav-menu a.active {
-    color: var(--accent-muted);
-}
-
-/* Mobile Dropdown Styling */
-.mobile-dropdown-toggle {
-    width: 100%;
-    text-align: left;
-    background: none;
-    border: none;
-    padding: 10px 0;
-    font-weight: 600;
-    color: var(--text-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-}
-
-.mobile-dropdown-content {
-    display: none;
-    overflow: hidden;
-    padding: 5px 0 5px 20px;
-    background-color: var(--hover-bg); 
-    border-left: 3px solid var(--accent-muted);
-}
-
-.mobile-dropdown-content a {
-    font-weight: 400;
-    padding: 8px 0;
-    font-size: 0.95rem;
-    color: var(--text-color);
-}
-
-.mobile-dropdown-content.active {
-    display: block;
-}
-
 
 /* ===================================================
    5. CONTACT PAGE SPECIFIC STYLES (UPDATED CARDS)
@@ -234,13 +99,13 @@ a:hover {
     opacity: 0.8;
     margin: 0;
     max-width: 850px;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 .contact-grid-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;                
-    margin-top: -15.5rem;        
+    margin-top: 0.5rem;        
     padding: 0;
     background: transparent;
     box-shadow: none;
@@ -283,7 +148,6 @@ a:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); 
     transition: var(--card-transition); 
     
-    /* பழைய border மற்றும் padding நீக்கப்பட்டது */
     border-left: none; 
     padding-left: 40px; 
     padding-right: 40px;
@@ -409,7 +273,6 @@ a:hover {
    =================================================== */
 
 @media (max-width: 992px) {
-    /* Header/Nav Mobile Switch */
     .main-nav {
         display: none;
     }
@@ -418,22 +281,20 @@ a:hover {
         display: block;
     }
     
-    /* Contact Page Mobile Overrides */
     .contact-grid-section {
-        grid-template-columns: 1fr; /* Stack into a single column */
-        gap: 30px; /* Reduced gap on mobile */
-        padding: 0 15px; /* No section padding, rely on container */
+        grid-template-columns: 1fr;
+        gap: 30px; 
+        padding: 0 15px;
     }
     
     .enquiry-form-container,
     .contact-info-container {
-        padding: 30px; /* Reduced card padding on mobile */
+        padding: 30px; 
     }
 
-    /* Info container specific resets */
     .contact-info-container {
-        border-left: none; /* Remove left border */
-        padding-left: 30px; /* Reset padding to card padding */
+        border-left: none; 
+        padding-left: 30px; 
         padding-right: 30px; 
     }
     
@@ -473,7 +334,6 @@ a:hover {
     .footer-section ul li {
         margin-bottom: 0;
     }
-
 }
 
 @media (max-width: 767px) {
