@@ -423,6 +423,60 @@
     color: #111111;
 }
 
+@media (max-width: 767px) {
+    .info-grid {
+        /* Force exactly 2 columns – no auto-fit/auto-fill */
+        grid-template-columns: repeat(2, 1fr) !important;
+        
+        /* Keep reasonable spacing */
+        gap: 1rem !important;
+        
+        /* Prevent overflow – allow horizontal scroll only if screen is extremely narrow */
+        overflow-x: auto !important;
+        padding: 0 0.5rem !important;
+    }
+
+    /* Make cards fit better in 2-column layout on small screens */
+    .info-card {
+        padding: 1rem 0.9rem !important;
+        font-size: 0.92rem !important;          /* slightly smaller text helps */
+        min-height: 240px !important;           /* more consistent card height */
+    }
+
+    .info-card i {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .info-card h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.7rem !important;
+    }
+
+    .info-card p,
+    .info-card ul li {
+        font-size: 0.88rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .alert-text {
+        font-size: 0.78rem !important;
+    }
+
+    /* If cards become too squeezed on very narrow phones (< ~360px) */
+    @media (max-width: 400px) {
+        .info-grid {
+            /* Still force 2 columns, but allow scrolling if needed */
+            grid-template-columns: repeat(2, minmax(160px, 1fr)) !important;
+            gap: 0.8rem !important;
+        }
+        
+        .info-card {
+            padding: 0.9rem !important;
+        }
+    }
+}
+
     </style>
 </head>
 <body>
@@ -459,7 +513,6 @@
                             </a>
                             <div class="dropdown" role="menu">
                                 <a href="./aboutus.html" role="menuitem">About Us</a>
-                                 <!-- <a href="./news.html" role="menuitem">News</a>  -->
                                 <a href="./supportus.html" role="menuitem">Support Us</a>
                             </div>
                         </li>
@@ -469,32 +522,12 @@
                                aria-haspopup="true">
                                 Archive Centre
                             </a>
-                            <!--  <div class="dropdown" role="menu">
-                                <a href="./archive.html" role="menuitem">Collection</a>
-                                <a href="./archive.html" role="menuitem">Online Catalogue</a>
-                                <a href="./archive.html" role="menuitem">Google Arts & Heritage</a>
-                            </div> 
-                        </li> -->
 
                         <li class="dropdown-parent">
                             <a href="./HeritageCentre.html" aria-haspopup="true">Exhibition </a>
-                            <!--  <div class="dropdown" role="menu">
-                                <a href="./ToL.html" role="menuitem">ToL Exhibition</a>
-                                <a href="./HeritageCentre.html" role="menuitem">Heritage Centre</a>
-                                <a href="./subjectguide.html" role="menuitem">Subject Guides</a>
-                                <a href="./historical-timeline.html" role="menuitem">Historical Timeline</a>
-                                <a href="./workshop.html" role="menuitem">Learning Workshops</a>
-                            </div>
-                        </li> -->
 
                         <li class="dropdown-parent">
                             <a href="./ToL.html" aria-haspopup="true">Heritage Museum</a>
-                          <!--    <div class="dropdown" role="menu">
-                                <a href="./event.html" role="menuitem">Latest Events</a>
-                                <a href="./project.html" role="menuitem">Projects & Programs</a>
-                                <a href="./collaborate.html" role="menuitem">Collaborate</a>
-                            </div>
-                        </li>-->
 
                         <li class="dropdown-parent">
                             <a href="#" aria-haspopup="true">Join</a>
@@ -554,40 +587,8 @@
                 </li>
                     <li><a href="./archive.html">  Archive Centre </a></li>
 
-                <!--   <li>
-                    <button class="mobile-dropdown-toggle" data-target="archiveDropdown" aria-expanded="false">
-                        Archive Centre 
-                    </button>
-                    <div class="mobile-dropdown-content" id="archiveDropdown">
-                        <a href="./archive.html">Collection</a>
-                       <a href="./archive.html">Online Catalogue</a>
-                        <a href="./archive.html">Google Arts & Heritage</a>
-                    </div>
-                </li>-->
                          <li><a href="./Heritage Hub.html">   Exhibition</a></li>
-                  <!--<li>
-                    <button class="mobile-dropdown-toggle" data-target="exhibitionDropdown" aria-expanded="false">
-                Exhibition
-                    </button>
-                    <div class="mobile-dropdown-content" id="exhibitionDropdown">
-                        <a href="./ToL.html">ToL Exhibition</a>
-                        <a href="./HeritageCentre.html">Heritage Centre</a>
-                         <!--<a href="./subjectguide.html">Subject Guides</a>
-                        <a href="./historical-timeline.html">Historical Timeline</a>
-                        <a href="./workshop.html">Learning Workshops</a>
-                    </div>
-                </li>-->
                      <li><a href="./ToL.html">Heritage Museum</a></li>
-                <!--  <li>
-                    <button class="mobile-dropdown-toggle" data-target="whatsOnDropdown" aria-expanded="false">
-                        What's On 
-                    </button>
-                    <div class="mobile-dropdown-content" id="whatsOnDropdown">
-                        <a href="./event.html">Latest Events</a>
-                        <a href="./project.html">Projects & Programs</a>
-                        <a href="./collaborate.html">Collaborate</a>
-                    </div>
-                </li>-->
 
                 <li>
                     <button class="mobile-dropdown-toggle" data-target="joinDropdown" aria-expanded="false">
@@ -761,32 +762,6 @@
 
     </div>
 </section>
-<!--<section class="upcoming-exhibitions">
-    <div class="container text-center">
-        <h2>Upcoming Exhibitions</h2>
-        <p>Mark your calendar for these exciting upcoming exhibitions</p>
-        
-        <div class="upcoming-container">
-            <div class="upcoming-grid">
-                <div class="upcoming-card">
-                    <div class="month-badge">March 2026</div>
-                    <h3>Tamil Cinema: Golden Age</h3>
-                    <p>Retrospective of Tamil cinema from Ceylon, featuring posters, costumes, and rare film footage from 1950s-1980s.</p>
-                </div>
-                <div class="upcoming-card">
-                    <div class="month-badge">April 2026</div>
-                    <h3>Agricultural Heritage</h3>
-                    <p>Traditional farming practices and tools of Tamil communities. Interactive displays on irrigation and cultivation techniques.</p>
-                </div>
-                <div class="upcoming-card">
-                    <div class="month-badge">May 2026</div>
-                    <h3>Festivals & Celebrations</h3>
-                    <p>Immersive exhibition on Tamil festivals, religious ceremonies, and community celebrations through the decades.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>-->
        <section class="visitor-info">
     <h2>Visitor Information</h2>
     <p>Everything you need to know for a seamless visit to our Heritage Centre</p>
