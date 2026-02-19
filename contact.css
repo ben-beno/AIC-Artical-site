@@ -473,4 +473,49 @@ a:hover {
     .footer-section ul li {
         margin-bottom: 0;
     }
+
+}
+
+@media (max-width: 767px) {
+
+    .contact-grid-section {
+        margin-top: 2rem !important;         
+    }
+
+    .page-header-section {
+        margin-bottom: 3rem !important;       
+        padding-bottom: 3rem !important;
+    }
+
+    .page-subtitle {
+        position: relative !important;       
+        z-index: 2 !important;                
+        margin-bottom: 8.5rem !important;    
+        padding: 0 15px !important;
+        opacity: 1 !important;
+        pointer-events: none !important;      
+    }
+
+    .enquiry-form-container {
+        position: relative !important;
+        z-index: 1 !important;               
+        margin-top: 1rem !important;
+        padding: 25px 20px !important;        
+    }
+
+    .container,
+    main,
+    .page-header-section {
+        overflow: visible !important;
+    }
+
+    .page-title {
+        font-size: 2.1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .page-subtitle {
+        font-size: 1.05rem !important;
+        line-height: 1.5 !important;
+    }
 }
