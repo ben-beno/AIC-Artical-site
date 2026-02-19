@@ -61,18 +61,13 @@ a:hover {
    5. CONTACT PAGE SPECIFIC STYLES (UPDATED CARDS)
    =================================================== */
 
-/* Page Header */
-/* Contact Page Hero Section (Consistent with Collaborate & About) */
 .page-header-section {
     width: 100%; 
-    
-    /* Nav bar gap remove seiya margin-top: 0 
-       Kila vara section-ukku gap thara margin-bottom: 4rem */
     margin: 0 auto 4rem auto; 
     
     text-align: center;
     display: flex;
-    padding: 5rem 1rem 4rem; /* Image 1-il ulla height vara standard padding */
+    padding: 5rem 1rem 4rem; 
 
     flex-direction: column;
     align-items: center;
@@ -189,11 +184,9 @@ a:hover {
     color: var(--text-color);
 }
 
-/* 5.4 Form Styling */
 .form-group {
     margin-bottom: 15px;
 }
-
 .enquiry-form-container input, 
 .enquiry-form-container select, 
 .enquiry-form-container textarea {
@@ -377,5 +370,190 @@ a:hover {
     .page-subtitle {
         font-size: 1.05rem !important;
         line-height: 1.5 !important;
+    }
+}
+
+/* Update this section in your contact.css file */
+
+/* Desktop/Large Screens (≥ 768px) - Center the grid with proper gaps */
+@media (min-width: 768px) {
+    .contact-grid-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        max-width: 1200px; /* Limit maximum width */
+        margin: 2rem auto 0 auto; /* Center horizontally with auto margins */
+        padding: 0 20px; /* Add padding on sides for breathing room */
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Ensure cards have equal height and proper spacing */
+    .enquiry-form-container,
+    .contact-info-container {
+        width: 100%;
+        height: fit-content;
+        padding: 40px;
+        box-sizing: border-box;
+    }
+}
+
+/* For very large screens (≥ 1400px), add more side padding */
+@media (min-width: 1400px) {
+    .contact-grid-section {
+        max-width: 1400px;
+        padding: 0 40px;
+    }
+}
+
+/* Mobile screens (< 768px) - Keep single column as before */
+@media (max-width: 767px) {
+    .contact-grid-section {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 30px;
+        padding: 0 15px;
+        margin: 2rem auto 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .enquiry-form-container,
+    .contact-info-container {
+        padding: 25px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+/* Make both containers equal height on desktop */
+@media (min-width: 768px) {
+    .contact-grid-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 2rem auto 0 auto;
+        padding: 0 20px;
+        width: 100%;
+        box-sizing: border-box;
+        align-items: stretch; /* This makes both columns stretch to same height */
+    }
+    
+    /* Make both containers full height */
+    .enquiry-form-container,
+    .contact-info-container {
+        width: 100%;
+        height: 100%; /* Take full height of the grid cell */
+        padding: 40px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Make the contact info content take available space */
+    .contact-info-container {
+        justify-content: flex-start; /* Align content to top */
+    }
+    
+    /* Optional: If you want the content in contact info to be vertically centered */
+    .contact-info-container {
+        justify-content: center; /* Uncomment this if you want content centered vertically */
+    }
+}
+
+/* For very large screens */
+@media (min-width: 1400px) {
+    .contact-grid-section {
+        max-width: 1400px;
+        padding: 0 40px;
+    }
+}
+
+/* Mobile screens - keep as is */
+@media (max-width: 767px) {
+    .contact-grid-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 15px;
+        margin: 2rem auto 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .enquiry-form-container,
+    .contact-info-container {
+        padding: 25px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        height: auto; /* Auto height on mobile */
+    }
+}
+/* Make map match grid width on desktop */
+@media (min-width: 768px) {
+    /* Container for map section */
+    .map-location-section {
+        max-width: 1200px; /* Same as grid max-width */
+        margin: 60px auto 0 auto; /* Center horizontally */
+        padding: 0 20px; /* Same padding as grid */
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Map placeholder/iframe */
+    .map-placeholder,
+    .map-placeholder iframe {
+        width: 100%;
+        height: 450px;
+        border-radius: var(--border-radius);
+    }
+}
+
+/* For very large screens */
+@media (min-width: 1400px) {
+    .map-location-section {
+        max-width: 1400px; /* Same as grid max-width for large screens */
+        padding: 0 40px; /* Same padding as grid */
+    }
+}
+
+/* Mobile screens - keep as is */
+@media (max-width: 767px) {
+    .map-location-section {
+        padding: 0 15px; /* Same padding as grid on mobile */
+        margin: 40px auto 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .map-placeholder {
+        height: 300px;
+    }
+}
+@media (min-width: 768px) {
+    /* Desktop */
+    .page-header-section {
+        margin-bottom: 1rem !important; 
+    }
+    
+    .contact-grid-section {
+        margin-top: 0 !important; 
+    }
+}
+
+@media (max-width: 767px) {
+    /* Mobile */
+    .page-header-section {
+        margin-bottom: 1.5rem !important; 
+    }
+    
+    .contact-grid-section {
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header-section {
+        margin-bottom: 1rem !important;
     }
 }
