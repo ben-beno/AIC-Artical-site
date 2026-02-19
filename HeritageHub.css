@@ -1879,7 +1879,7 @@ li.relative {
     }
 
     .brand-tagline {
-        font-size: 0.7rem;
+        font-size: 32px;
         line-height: 1.2;
         letter-spacing: 0.5px;
         margin: 0;
@@ -1899,29 +1899,25 @@ li.relative {
     align-items: center;
     gap: 30px;
 }             
-/* Tighten gap between logo and text on mobile only, without changing desktop or other UI */
 @media (max-width: 767px) {
     .heritage-brand {
-        gap: 0 !important;  /* Reduce from 2px to 0 for minimal spacing */
-        padding: 8px 0 !important;  /* Keep vertical padding, but ensure no side overflow */
-        justify-content: flex-start !important;  /* Align left to prevent shifts */
-        align-items: center !important;  /* Center vertically for better text positioning */
+        gap: 0 !important;  
+        padding: 8px 0 !important;  
+        justify-content: flex-start !important;  
+        align-items: center !important; 
     }
 
     .brand-text {
-        gap: 0 !important;  /* Reduce inner text gap from 1px to 0 */
-        margin-left: 0 !important;  /* Remove any left margin causing extra space */
-        text-align: left !important;  /* Align text left to hug the logo */
+        gap: 0 !important; 
+        margin-left: 0 !important;  
+        text-align: left !important;  
     }
 
-    /* Optional: If the welcome text below is shifting due to header overflow */
     .hero-text-content {
-        margin-top: 10px !important;  /* Slightly reduce top margin if needed for proximity */
+        margin-top: 10px !important; 
     }
 }
-/* ===== COMPLETE MOBILE FIXES ===== */
 
-/* Fix 1: Brand logo and text gap removal */
 @media (max-width: 767px) {
     .heritage-brand {
         display: flex !important;
@@ -1952,9 +1948,7 @@ li.relative {
     }
 }
 
-/* Fix 2: Classification title - reduce size and show full text */
 @media (max-width: 767px) {
-    /* Main classification title */
     h2.classification-title,
     .classification-title {
         font-size: 1.2rem !important; /* Reduced from default */
@@ -1975,7 +1969,6 @@ li.relative {
         -webkit-line-clamp: unset !important;
     }
     
-    /* Force show all text - override any existing rules */
     .classification-title,
     .governanceSwiper .classification-title {
         display: block !important;
@@ -1985,7 +1978,6 @@ li.relative {
     }
 }
 
-/* Fix 3: Card titles - show full text */
 @media (max-width: 767px) {
     .heritage-title {
         font-size: 1rem !important;
@@ -2000,7 +1992,6 @@ li.relative {
     }
 }
 
-/* Fix 4: Tamil and description text - show full content */
 @media (max-width: 767px) {
     .tamil,
     .heritage-desc {
@@ -2015,10 +2006,7 @@ li.relative {
         margin-bottom: 8px !important;
     }
 }
-
-/* Fix 5: Override any existing mobile rules that might be cutting text */
 @media (max-width: 767px) {
-    /* Remove all line clamping */
     .classification-box .tamil,
     .classification-box .heritage-desc,
     .classification-box .tamil.expanded,
@@ -2031,31 +2019,23 @@ li.relative {
         display: block !important;
         white-space: normal !important;
     }
-    
-    /* Remove any max-height restrictions */
-    .classification-box .card-content,
+        .classification-box .card-content,
     .governanceSwiper .card-content {
         height: auto !important;
         max-height: none !important;
         overflow: visible !important;
     }
-    
-    /* Ensure swiper doesn't clip */
     .swiper,
     .swiper-container,
     .governanceSwiper,
     .classification-box .swiper {
         overflow: visible !important;
     }
-    
-    /* Ensure slides show full content */
     .swiper-slide,
     .governanceSwiper .swiper-slide {
         overflow: visible !important;
         height: auto !important;
     }
-    
-    /* Remove any fixed heights on cards */
     .heritage-card,
     .classification-box .heritage-card,
     .governanceSwiper .heritage-card {
@@ -2064,77 +2044,58 @@ li.relative {
         overflow: visible !important;
     }
 }
-
-/* Extra small devices */
 @media (max-width: 480px) {
     h2.classification-title,
     .classification-title {
         font-size: 1.1rem !important;
     }
-    
     .heritage-title {
         font-size: 0.95rem !important;
     }
-    
     .tamil,
     .heritage-desc {
         font-size: 0.8rem !important;
     }
 }
-
 @media (max-width: 360px) {
     h2.classification-title,
     .classification-title {
         font-size: 1rem !important;
     }
-    
     .heritage-title {
         font-size: 0.9rem !important;
     }
 }
-
-/* Fix 6: Remove any read-more buttons if they exist */
 @media (max-width: 767px) {
     .read-more-btn,
     .classification-box .read-more-btn {
         display: none !important;
     }
 }
-/* ──────────────────────────────────────────────
-   FINAL MOBILE FIXES – Full titles visible, smaller fonts
-   Only affects screens < 768px – desktop untouched
-   ────────────────────────────────────────────── */
-
 @media (max-width: 767px) {
-
-    /* 1. Main section title – show FULL text, smaller size */
     .classification-title,
     h2.classification-title {
-        font-size: 1.25rem !important;          /* ← decreased from ~1.3–2rem */
+        font-size: 1.25rem !important;        
         line-height: 1.35 !important;
         white-space: normal !important;
         word-break: break-word !important;
         overflow-wrap: break-word !important;
         hyphens: auto !important;
-        
-        /* Force full visibility – kill any clamping/ellipsis */
         display: block !important;
         -webkit-line-clamp: unset !important;
         -webkit-box-orient: horizontal !important; /* override vertical clamp */
         max-height: none !important;
         overflow: visible !important;
-        text-overflow: clip !important;         /* no … */
+        text-overflow: clip !important;        
         
         padding: 0 12px !important;
         margin: 1rem auto 1.2rem !important;
         text-align: center !important;
         width: 100% !important;
     }
-
-    /* 2. Card titles – full text, readable size */
     .heritage-title,
     .heritage-card h3.heritage-title {
-        font-size: 1.05rem !important;          /* was ~0.95rem – slightly larger but still fits */
+        font-size: 1.05rem !important;        
         line-height: 1.35 !important;
         font-weight: 700 !important;
         white-space: normal !important;
@@ -2146,8 +2107,6 @@ li.relative {
         margin-bottom: 0.6rem !important;
         padding: 0 8px !important;
     }
-
-    /* 3. Tamil & English description – full visibility */
     .tamil,
     .heritage-desc {
         font-size: 0.82rem !important;          /* balanced for readability */
@@ -2162,8 +2121,6 @@ li.relative {
         margin-bottom: 0.8rem !important;
         padding: 0 8px !important;
     }
-
-    /* 4. Make sure cards & content can grow fully */
     .heritage-card,
     .classification-box .heritage-card {
         height: auto !important;
@@ -2171,15 +2128,12 @@ li.relative {
         max-height: none !important;
         overflow: visible !important;
     }
-
     .card-content {
         height: auto !important;
         min-height: auto !important;
         padding: 1rem 0.9rem 1.3rem !important;
         overflow: visible !important;
     }
-
-    /* 5. Swiper safety – no clipping */
     .swiper,
     .governanceSwiper,
     .swiper-container,
@@ -2187,42 +2141,51 @@ li.relative {
         overflow: visible !important;
         height: auto !important;
     }
-
     .swiper-slide,
     .governanceSwiper .swiper-slide {
         height: auto !important;
         overflow: visible !important;
         padding-bottom: 1rem !important;
     }
-
-    /* 6. Hide read-more if it exists (since we show full text now) */
     .read-more-btn,
     .classification-box .read-more-btn {
         display: none !important;
     }
 }
-
-/* Extra small screens – even smaller fonts if needed */
 @media (max-width: 480px) {
     .classification-title,
     h2.classification-title {
         font-size: 1.15rem !important;
     }
-    
     .heritage-title {
         font-size: 0.98rem !important;
     }
-    
     .tamil,
     .heritage-desc {
         font-size: 0.78rem !important;
     }
 }
-
 @media (max-width: 360px) {
     .classification-title,
     h2.classification-title {
         font-size: 1.05rem !important;
     }
 }
+@media (min-width: 768px) {
+    .heritage-brand {
+        padding-left: 0px !important;   
+        padding-right: 584px !important;  
+    }
 
+    .brand-container {
+        padding-left: 0 !important;     
+        padding-right: 24px !important;
+    }
+    .brand-logo {
+        margin-left: -4px !important;   
+    }
+    .heritage-wrapper {
+        padding-left: 0 !important;
+        justify-content: flex-start !important;
+    }
+}
