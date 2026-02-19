@@ -2156,7 +2156,7 @@ li.relative {
         word-break: break-word !important;
         hyphens: auto !important;
         overflow: visible !important;
-        max-height: none !important !important;
+        max-height: none  !important;
         -webkit-line-clamp: unset !important;
         display: block !important;
         margin-bottom: 0.8rem !important;
@@ -2225,3 +2225,4 @@ li.relative {
         font-size: 1.05rem !important;
     }
 }
+
