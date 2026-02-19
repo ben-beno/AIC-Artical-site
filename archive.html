@@ -1154,6 +1154,167 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+    // ============================================
+// MOBILE MENU FUNCTIONALITY
+// ============================================
+(function() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNavOffcanvas = document.getElementById('mobileNavOffcanvas');
+    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+    
+    if (!mobileMenuBtn || !mobileNavOffcanvas) return;
+    
+    function openMobileMenu() {
+        mobileNavOffcanvas.classList.add('active');
+        mobileNavOverlay?.classList.add('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        
+        // Focus trap
+        const focusableElements = mobileNavOffcanvas.querySelectorAll('a, button');
+        if (focusableElements.length) {
+            focusableElements[0].focus();
+        }
+    }
+    
+    function closeMobileMenu() {
+        mobileNavOffcanvas.classList.remove('active');
+        mobileNavOverlay?.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        mobileMenuBtn.focus();
+    }
+    
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    mobileNavClose?.addEventListener('click', closeMobileMenu);
+    mobileNavOverlay?.addEventListener('click', closeMobileMenu);
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileNavOffcanvas.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Mobile dropdown toggles
+    const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const targetContent = document.getElementById(targetId);
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            // Close all other dropdowns
+            dropdownToggles.forEach(t => {
+                if (t !== this) {
+                    t.setAttribute('aria-expanded', 'false');
+                    const tId = t.getAttribute('data-target');
+                    document.getElementById(tId)?.classList.remove('active');
+                }
+            });
+            
+            // Toggle current dropdown
+            targetContent?.classList.toggle('active');
+            this.setAttribute('aria-expanded', !isExpanded);
+        });
+    });
+})();
+
+// ============================================
+// BACK TO TOP BUTTON
+// ============================================
+(function() {
+    const backToTop = document.getElementById('backToTop');
+    if (!backToTop) return;
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+    
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+})();
+
+    // Add keyboard accessibility for card clicks
+    document.querySelectorAll('.featured-card, .new-item-card').forEach(card => {
+        card.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const link = this.querySelector('a');
+                if (link) {
+                    link.click();
+                }
+            }
+        });
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+
+    window.onload = function() {
+        const image = document.getElementById('hero-img');
+        const video = document.getElementById('hero-vid');
+
+        // 5000 milliseconds = 5 seconds
+        setTimeout(function() {
+            // Image-ai hide pannu
+            image.style.display = 'none';
+            
+            // Video-vai show panni play pannu
+            video.style.display = 'block';
+            video.play();
+        }, 2000); 
+    };
+
+document.querySelectorAll(".featured-card").forEach(card => {
+
+    card.addEventListener("click", function (e) {
+
+        // Explore button click pannina normal link work aagum
+        if (e.target.closest("a")) return;
+
+        const link = this.dataset.link;
+        if (link) {
+            window.location.href = link;
+        }
+    });
+
+    // Keyboard support (Enter key)
+    card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            const link = this.dataset.link;
+            if (link) {
+                window.location.href = link;
+            }
+        }
+    });
+
+});
+
+
     function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
     return {
@@ -1314,4 +1475,5 @@ document.addEventListener('DOMContentLoaded', function () {
 </a>
 
 </body>
+
 </html>
