@@ -1919,3 +1919,184 @@ li.relative {
         margin-top: 10px !important;  /* Slightly reduce top margin if needed for proximity */
     }
 }
+/* ===== COMPLETE MOBILE FIXES ===== */
+
+/* Fix 1: Brand logo and text gap removal */
+@media (max-width: 767px) {
+    .heritage-brand {
+        display: flex !important;
+        align-items: center !important;
+        gap: 5px !important; /* Minimal gap */
+        padding: 8px 10px !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    
+    .brand-logo {
+        width: 35px !important;
+        height: auto !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .brand-text {
+        flex: 1 !important;
+        white-space: normal !important;
+    }
+    
+    .brand-title {
+        font-size: 1rem !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        display: block !important;
+    }
+}
+
+/* Fix 2: Classification title - reduce size and show full text */
+@media (max-width: 767px) {
+    /* Main classification title */
+    h2.classification-title,
+    .classification-title {
+        font-size: 1.2rem !important; /* Reduced from default */
+        line-height: 1.3 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
+        text-align: center !important;
+        margin-bottom: 15px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        /* Remove any clipping */
+        overflow: visible !important;
+        text-overflow: clip !important;
+        -webkit-line-clamp: unset !important;
+    }
+    
+    /* Force show all text - override any existing rules */
+    .classification-title,
+    .governanceSwiper .classification-title {
+        display: block !important;
+        -webkit-box-orient: horizontal !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+}
+
+/* Fix 3: Card titles - show full text */
+@media (max-width: 767px) {
+    .heritage-title {
+        font-size: 1rem !important;
+        line-height: 1.3 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow: visible !important;
+        max-height: none !important;
+        display: block !important;
+        -webkit-line-clamp: unset !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+/* Fix 4: Tamil and description text - show full content */
+@media (max-width: 767px) {
+    .tamil,
+    .heritage-desc {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow: visible !important;
+        max-height: none !important;
+        display: block !important;
+        -webkit-line-clamp: unset !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+/* Fix 5: Override any existing mobile rules that might be cutting text */
+@media (max-width: 767px) {
+    /* Remove all line clamping */
+    .classification-box .tamil,
+    .classification-box .heritage-desc,
+    .classification-box .tamil.expanded,
+    .classification-box .heritage-desc.expanded,
+    .governanceSwiper .tamil,
+    .governanceSwiper .heritage-desc {
+        -webkit-line-clamp: unset !important;
+        max-height: none !important;
+        overflow: visible !important;
+        display: block !important;
+        white-space: normal !important;
+    }
+    
+    /* Remove any max-height restrictions */
+    .classification-box .card-content,
+    .governanceSwiper .card-content {
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    /* Ensure swiper doesn't clip */
+    .swiper,
+    .swiper-container,
+    .governanceSwiper,
+    .classification-box .swiper {
+        overflow: visible !important;
+    }
+    
+    /* Ensure slides show full content */
+    .swiper-slide,
+    .governanceSwiper .swiper-slide {
+        overflow: visible !important;
+        height: auto !important;
+    }
+    
+    /* Remove any fixed heights on cards */
+    .heritage-card,
+    .classification-box .heritage-card,
+    .governanceSwiper .heritage-card {
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    h2.classification-title,
+    .classification-title {
+        font-size: 1.1rem !important;
+    }
+    
+    .heritage-title {
+        font-size: 0.95rem !important;
+    }
+    
+    .tamil,
+    .heritage-desc {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    h2.classification-title,
+    .classification-title {
+        font-size: 1rem !important;
+    }
+    
+    .heritage-title {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Fix 6: Remove any read-more buttons if they exist */
+@media (max-width: 767px) {
+    .read-more-btn,
+    .classification-box .read-more-btn {
+        display: none !important;
+    }
+}
