@@ -917,7 +917,7 @@ input, textarea, select {
   display: flex;
   align-items: center;
   gap: 16px;
-  color: #111;
+  color:  #0f172a;
 }
 .brand-title {
   font-size: 50px;
@@ -1246,13 +1246,12 @@ input, textarea, select {
 /* ────────────────────────────────────────────────
    FINAL FIXED SWIPER – Dots STRICTLY below cards
 ───────────────────────────────────────────────── */
-
 .governanceSwiper {
   position: relative;
   width: 100%;
   overflow: hidden;
-  min-height: 380px;                   /* card height + extra space for dots */
-  padding-bottom: 90px !important;     /* STRONG space for dots – adjust if needed */
+  min-height: 380px;                  
+  padding-bottom: 90px !important;    
 }
 
 .governanceSwiper .swiper-wrapper {
@@ -1273,8 +1272,7 @@ input, textarea, select {
   left: 0;
   right: 0;
   text-align: center;
-  z-index: 50 !important;              /* very high – never hide under cards */
-  padding: 10px 0;
+  z-index: 50 !important;             
 }
 
 /* Dots look – clear & visible */
@@ -1325,9 +1323,6 @@ input, textarea, select {
   min-height: 380px;
   padding-bottom: 90px !important; /* For dots */
 }
-
-/* No need for --swiper-slide-gap or margin-right anymore—JS handles gaps */
-
 /* Pagination (dots) */
 .governanceSwiper .swiper-pagination {
   position: absolute !important;
@@ -1418,11 +1413,10 @@ input, textarea, select {
     bottom: 15px !important;
   }
 }
-/* Desktop-la mattum cards naduvula gap kuraikkum – classification sections specific */
 @media (min-width: 768px) {
   #main-content .governanceSwiper .swiper-slide,
   .classification-section .governanceSwiper .swiper-slide {
-    margin-right: 2px !important;   /* ← MAIN CHANGE: gap kuraikkum – ippo 16px try pannu */
+    margin-right: 2px !important; 
   }
 
   #main-content .governanceSwiper .swiper-slide:last-child,
@@ -1431,20 +1425,19 @@ input, textarea, select {
   }
 
   .governanceSwiper .swiper-wrapper {
-    justify-content: flex-start !important;  /* left align safe-a irukkum */
+    justify-content: flex-start !important; 
   }
 }
 
 @media (min-width: 1200px) {
   #main-content .governanceSwiper .swiper-slide,
   .classification-section .governanceSwiper .swiper-slide {
-    margin-right: 20px !important;   /* big screen-la slight increase if needed */
+    margin-right: 20px !important;   
   }
 }
-/* Desktop only – reduce card gaps */
 @media (min-width: 992px) {
     .publication-grid {
-        gap: 0.9rem;   /* default 1.5rem irundha romba kammi */
+        gap: 0.9rem;   
     }
 }
 @media (min-width: 992px) {
@@ -1453,10 +1446,6 @@ input, textarea, select {
         row-gap: 1.2rem;
     }
 }
-
-/* ────────────────────────────────────────────────
-   NEW: Classification Box + Centered Title
-───────────────────────────────────────────────── */
 
 .classification-box {
     background:  #e6dacc;
@@ -1483,9 +1472,6 @@ input, textarea, select {
     margin-right: auto;
 
 }
-
-
-/* Remove left border/padding that might exist from older rules */
 .classification-title {
     padding-left: 0 !important;
     border-left: none !important;
@@ -1515,14 +1501,12 @@ input, textarea, select {
     }
 }
 
-/* Optional: subtle hover effect on the whole box */
 .classification-box:hover {
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     transform: translateY(-2px);
     transition: all 0.25s ease;
 }
 
-/* Ensure swiper dots stay visible below cards */
 .governanceSwiper {
     min-height: 400px;
     padding-bottom: 100px !important;
@@ -1537,8 +1521,6 @@ input, textarea, select {
         bottom: 15px !important;
     }
 }
-
-
 .classification-title::after {
     content: '';
     position: absolute;
@@ -1556,17 +1538,13 @@ input, textarea, select {
 .classification-title:hover::after {
     background-position: 0% 0;
 }
-/* Make the line appear when hovering ANYWHERE in the box */
 .classification-box:hover .classification-title::after {
-    width: 120px;          /* or 100%, 140px, whatever you prefer */
+    width: 120px;         
 }
 
-/* If you used scaleX version */
 .classification-box:hover .classification-title::after {
     transform: translateX(-50%) scaleX(1);
 }
-
-/* If you used left-to-right version */
 .classification-box:hover .classification-title::after {
     width: 100%;
 }
@@ -1629,7 +1607,7 @@ input, textarea, select {
     }
 
     .governanceSwiper .swiper-slide-active {
-        opacity: 1;                             /* center card full bright */
+        opacity: 1;           
     }
 }
 /* Mobile view adjustments */
@@ -1656,18 +1634,15 @@ input, textarea, select {
         text-align: right;
         gap: 1px; /* Even smaller gap on mobile */
     }
-    
     .brand-archive {
         font-size: 0.8rem !important;
         white-space: nowrap;
     }
-    
     .brand-title {
         font-size: 1.2rem !important;
         white-space: nowrap;
     }
 }
-
 /* Extra small devices */
 @media (max-width: 480px) {
     .heritage-brand {
@@ -1677,35 +1652,10 @@ input, textarea, select {
     .brand-logo img {
         width: 35px !important;
     }
-    
     .brand-archive {
         font-size: 0.7rem !important;
     }
-    
     .brand-title {
         font-size: 1rem !important;
     }
 }
-/* Remove side gaps on mobile without changing desktop or other UI */
-@media (max-width: 768px) {
-    .footer-container {  /* Replace with your actual footer class, e.g., .footer or .container (if inside footer) */
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        width: 100% !important;  /* Ensures full-width */
-    }
-
-    /* Optional: If columns (Quick Links, Categories, Legal) have extra inner padding, adjust lightly */
-    .footer-container .row {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-    /* If the WhatsApp icon or lists hug the edge too much, add minimal side padding to content only */
-    .footer-container .col-md-4 {  /* Or your column classes, e.g., .col-4 or .footer-column */
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-    }
-}
-
