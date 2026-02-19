@@ -2100,3 +2100,128 @@ li.relative {
         display: none !important;
     }
 }
+/* ──────────────────────────────────────────────
+   FINAL MOBILE FIXES – Full titles visible, smaller fonts
+   Only affects screens < 768px – desktop untouched
+   ────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+
+    /* 1. Main section title – show FULL text, smaller size */
+    .classification-title,
+    h2.classification-title {
+        font-size: 1.25rem !important;          /* ← decreased from ~1.3–2rem */
+        line-height: 1.35 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+        
+        /* Force full visibility – kill any clamping/ellipsis */
+        display: block !important;
+        -webkit-line-clamp: unset !important;
+        -webkit-box-orient: horizontal !important; /* override vertical clamp */
+        max-height: none !important;
+        overflow: visible !important;
+        text-overflow: clip !important;         /* no … */
+        
+        padding: 0 12px !important;
+        margin: 1rem auto 1.2rem !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    /* 2. Card titles – full text, readable size */
+    .heritage-title,
+    .heritage-card h3.heritage-title {
+        font-size: 1.05rem !important;          /* was ~0.95rem – slightly larger but still fits */
+        line-height: 1.35 !important;
+        font-weight: 700 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow: visible !important;
+        max-height: none !important;
+        -webkit-line-clamp: unset !important;
+        display: block !important;
+        margin-bottom: 0.6rem !important;
+        padding: 0 8px !important;
+    }
+
+    /* 3. Tamil & English description – full visibility */
+    .tamil,
+    .heritage-desc {
+        font-size: 0.82rem !important;          /* balanced for readability */
+        line-height: 1.45 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+        overflow: visible !important;
+        max-height: none !important !important;
+        -webkit-line-clamp: unset !important;
+        display: block !important;
+        margin-bottom: 0.8rem !important;
+        padding: 0 8px !important;
+    }
+
+    /* 4. Make sure cards & content can grow fully */
+    .heritage-card,
+    .classification-box .heritage-card {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .card-content {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 1rem 0.9rem 1.3rem !important;
+        overflow: visible !important;
+    }
+
+    /* 5. Swiper safety – no clipping */
+    .swiper,
+    .governanceSwiper,
+    .swiper-container,
+    .classification-box .swiper {
+        overflow: visible !important;
+        height: auto !important;
+    }
+
+    .swiper-slide,
+    .governanceSwiper .swiper-slide {
+        height: auto !important;
+        overflow: visible !important;
+        padding-bottom: 1rem !important;
+    }
+
+    /* 6. Hide read-more if it exists (since we show full text now) */
+    .read-more-btn,
+    .classification-box .read-more-btn {
+        display: none !important;
+    }
+}
+
+/* Extra small screens – even smaller fonts if needed */
+@media (max-width: 480px) {
+    .classification-title,
+    h2.classification-title {
+        font-size: 1.15rem !important;
+    }
+    
+    .heritage-title {
+        font-size: 0.98rem !important;
+    }
+    
+    .tamil,
+    .heritage-desc {
+        font-size: 0.78rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .classification-title,
+    h2.classification-title {
+        font-size: 1.05rem !important;
+    }
+}
