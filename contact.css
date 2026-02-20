@@ -557,3 +557,25 @@ a:hover {
         margin-bottom: 1rem !important;
     }
 }
+@media (max-width: 767px) {
+    .mobile-dropdown-toggle,
+    .mobile-dropdown-content a {
+        font-size: 1.1rem !important;         
+        font-weight: 600 !important;          
+        padding: 1rem 1.5rem !important;     
+        line-height: 1.4 !important;
+    }
+
+    .mobile-dropdown-toggle span {
+        font-size: 1rem !important;           
+    }
+
+    .mobile-dropdown-toggle {
+        font-size: 1.1rem !important;
+    }
+
+    .mobile-dropdown-content a {
+        font-size: 1rem !important;
+        padding: 0.9rem 2.5rem !important;    
+    }
+}
