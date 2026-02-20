@@ -370,9 +370,8 @@ padding: 4rem 4rem 7rem;
                 height: 150px;
             }
         }
-    /* Filter section adjustments */
 .search-section {
-    margin-top: -6rem;          /* hero-ஐ overlap செய்ய */
+    margin-top: -6rem;          
     z-index: 10;
     position: relative;
 }
@@ -386,7 +385,7 @@ padding: 4rem 4rem 7rem;
 /* Mobile responsive fix */
 @media (max-width: 768px) {
     .search-section {
-        margin-top: -4rem;      /* mobile-ல கொஞ்சம் குறைவா overlap */
+        margin-top: -4rem;     
         padding: 0 1rem;
     }
 
@@ -398,7 +397,6 @@ padding: 4rem 4rem 7rem;
         margin-bottom: 1rem;
     }
 
-    /* Labels mobile-ல சின்னதா தெரியும் */
     .search-section label {
         font-size: 0.85rem;
     }
@@ -510,8 +508,78 @@ padding: 4rem 4rem 7rem;
     font-size: 0.9rem;
     color: #111111;
 }
+@media (max-width: 767px) {
+    #main-content.container {
+        padding-left: 1.5rem !important;     /* left & right same */
+        padding-right: 1.5rem !important;
+        box-sizing: border-box !important;
+    }
 
+    .hero-section {
+        margin: 2rem 0 !important;           /* mobile-la top/bottom space reduce */
+        padding: 2rem 0 !important;
+        text-align: center !important;       /* force center */
+    }
 
+    .hero-content {
+        max-width: 100% !important;          /* full width use pannu */
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    .hero-content h1,
+    .hero-content p {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+}
+@media (min-width: 768px) {
+    .hero-section {
+        padding: 4rem 4rem 7rem !important;  /* your original padding */
+        margin: 5rem 1rem 10rem !important;
+    }
+}
+@media (max-width: 767px) {
+    .hero-section {
+        margin-bottom: 0.5rem !important;    
+        padding-bottom: 0.5rem !important;    
+    }
+
+    .search-section {
+        margin-top: -15.5rem !important;      
+        padding-top: 0 !important;           
+        margin-bottom: 1rem !important;       
+    }
+    #main-content.container,
+    .search-section .card {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .search-section .row.g-3 {
+        margin-top: 0 !important;
+    }
+}
+@media (min-width: 768px) {
+    .hero-section {
+        margin-bottom: 2rem !important;     
+        padding-bottom: 1rem !important;    
+    }
+
+    .search-section {
+        margin-top: -1.5rem !important;    
+        padding-top: 0 !important;        
+    }
+
+    #main-content.container {
+        margin-bottom: 0 !important;
+    }
+
+    .search-section .card {
+        margin-top: 0 !important;
+    }
+}    
     </style>
 </head>
 <body>
@@ -700,10 +768,9 @@ padding: 4rem 4rem 7rem;
         </select>
     </div>
 
-    <!-- Era → Historical Period (page-க்கு match ஆகுற மாதிரி) -->
     <div class="col-6 col-md-4">
         <label class="small fw-bold mb-1 text-secondary"><i class="fas fa-hourglass-half me-1"></i> Historical Period</label>
-        <select class="form-select filter-select shadow-sm" id="eraFilter">   <!-- id ஐ yearFilter-ல இருந்து eraFilter ஆக மாற்றினேன் -->
+        <select class="form-select filter-select shadow-sm" id="eraFilter">  
             <option value="">All Periods</option>
             <option value="ancient">Ancient Era (Pre-300 BCE)</option>
             <option value="medieval">Medieval Period (300-1500 CE)</option>
@@ -733,7 +800,6 @@ padding: 4rem 4rem 7rem;
     <!-- Main Content -->
 <main class="container my-0 main-content-fix">
         <div class="row">
-            <!-- Left Column: Scrollable Timeline -->
             <div class="col-lg-8 timeline-container">
                 <div class="card mb-4" style="background: white; border-radius: var(--border-radius); padding: 1.5rem;">
                     <h2>Journey Through Time: Tamils of Lanka</h2>
@@ -742,7 +808,6 @@ padding: 4rem 4rem 7rem;
 
                 <h3 class="mb-4">Historical Timeline</h3>
 
-                <!-- Timeline as Separate Cards with Accordion for Interactivity -->
                 <div class="timeline-wrapper">
                     <div class="accordion" id="timelineAccordion">
 
@@ -1089,7 +1154,7 @@ padding: 4rem 4rem 7rem;
     
     const searchInput   = document.getElementById('searchInput');
     const typeFilter    = document.getElementById('typeFilter');
-    const eraFilter     = document.getElementById('eraFilter');     // மாற்றப்பட்ட id
+    const eraFilter     = document.getElementById('eraFilter');    
     const topicFilter   = document.getElementById('topicFilter');
     const clearBtn      = document.getElementById('clearFiltersBtn');
     const noResultsBox  = document.getElementById('noResults');
@@ -1124,7 +1189,6 @@ padding: 4rem 4rem 7rem;
             if (shouldShow) visibleCount++;
         });
 
-        // No results காட்டுறது
         if (visibleCount === 0 && (searchText || selectedType || selectedEra || selectedTopic)) {
             noResultsBox.classList.remove('d-none');
         } else {
@@ -1158,3 +1222,4 @@ padding: 4rem 4rem 7rem;
 
 </body>
 </html>
+
