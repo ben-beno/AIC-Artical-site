@@ -1659,3 +1659,14 @@ input, textarea, select {
         font-size: 1rem !important;
     }
 }
+.hidden {
+    display: none !important;
+}
+@media (max-width: 767px) {
+    #more-content:not(.hidden) {
+        display: block !important;
+    }
+    #more-content.hidden {
+        display: none !important;
+    }
+}
