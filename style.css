@@ -1229,3 +1229,8 @@ html, body {
     height: auto;
   }
 }
+@media (max-width: 767px) {
+.header-main {
+gap: 1rem !important;  /* logo text- menu button space */
+}
+}
