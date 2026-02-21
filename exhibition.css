@@ -991,13 +991,13 @@ footer .container {
     overflow: hidden !important;
 }
 
-/* Cancel any inherited negative or fixed margins that cause right gap */
+
 footer .container {
     margin-right: 0 !important;
     margin-left: 0 !important;
 }
 
-/* Mobile-specific – match & cancel main-content px-4 (≈16px) */
+
 @media (max-width: 767px) {
     footer,
     footer .container {
@@ -1008,7 +1008,7 @@ footer .container {
         padding-right: 16px !important;
     }
 
-    /* Kill any extra right-pushing from classification or main */
+    
     #main-content,
     .classification-box,
     .classification-section {
@@ -1033,35 +1033,47 @@ footer .container {
         box-sizing: border-box !important;
     }
 
-    /* Footer-la right space root cause kill */
+   
     footer {
         padding-right: 0 !important;
         margin-right: 0 !important;
         right: 0 !important;
         width: 100% !important;
         max-width: none !important;
-        overflow: hidden !important;                /* extra right overflow hide */
+        overflow: hidden !important;             
     }
 
     footer .container {
         padding-right: 0 !important;
         margin-right: 0 !important;
         width: 100% !important;
-        max-width: 1200px !important;               /* classification-box oda same width */
+        max-width: 1200px !important;             
         margin-left: auto !important;
         margin-right: auto !important;
     }
 
     footer {
-        margin-right: -1px !important;              /* browser scrollbar or pixel rounding fix */
+        margin-right: -1px !important;             
     }
 
-    /* Grid columns perfect fit */
+    
     footer .footer-content {
         display: grid !important;
         grid-template-columns: repeat(4, 1fr) !important;
         gap: 2rem !important;
         justify-content: space-between !important;
+    }
+}
+@media (max-width: 639px) {
+    .grid {
+        padding-right: 1.5rem !important;  
+       
+       
+    }
+    
+  
+    .max-w-6xl .grid {
+        padding-right: 1.5rem !important;
     }
 }
 
