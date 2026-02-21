@@ -307,7 +307,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             padding: 20px;
-            /* Key Change: Setting width for two cards per row */
+          
             width: calc(50% - 10px); /* 50% width minus half the gap (20px / 2 = 10px) */
             box-sizing: border-box;
             text-align: left;
@@ -347,7 +347,7 @@
             color: #8b0000;
         }
 
-        /* Mobile Responsiveness: Ensures single column on small screens */
+       
         @media (max-width: 650px) {
             .document-card {
                 width: 100%; /* One card per row on small screens */
@@ -404,10 +404,50 @@
 }
 
 .cards-section {
-    margin-top: -15.5rem;     /* அல்லது -20px, -1rem — screen பார்த்து adjust பண்ணுங்க */
+    margin-top: -15.5rem;    
 }
 
 
+footer {
+    width: 100%;
+    background: #0f0f0f;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content,
+.footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #333;
+    color: #999;
+}
+
+@media (min-width: 992px) {
+    .footer-bottom {
+        border-top: 1px solid #333;
+        width: 100%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-bottom {
+    }
+}
 
 
 
