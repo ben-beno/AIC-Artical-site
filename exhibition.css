@@ -646,11 +646,11 @@
         top: 1vw;
         left: 15vw;
     }
-    .collage-img:nth-child(2) {
-        width: 30vw;
+   .collage-img:nth-child(2) {
+        width: 40vw;
         height: 30vw;
         top: 25vw;
-        left: 10vw;
+        left: 0.5vw;
     }
     .collage-img:nth-child(3) {
         width: 48vw;
@@ -663,7 +663,7 @@
         height: 35vw;
         top: 72vw;
         right: 5vw;
-        left: 15vw;
+        left: 10vw;
     }
 }
 @media (max-width: 767px) {
@@ -1076,4 +1076,5 @@ footer .container {
         padding-right: 1.5rem !important;
     }
 }
+
 
