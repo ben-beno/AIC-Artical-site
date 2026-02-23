@@ -1202,4 +1202,27 @@ body {
         font-size: 0.95rem;         /* adjust text size for mobile */
     }
 }
+@media (max-width: 767px) {
+    .tic-glance .glance-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 1.5rem !important;
+        padding: 20px 15px !important;
+    }
+
+    .tic-glance .glance-card,
+    .tic-glance .glance-flip-card {
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+    }
+
+    .tic-glance .second-row-wrapper {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+    }
+}
 
