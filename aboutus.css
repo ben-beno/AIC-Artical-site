@@ -996,6 +996,12 @@ body {
     opacity: 0.85;
     border-top: 1px solid var(--accent-muted);
     padding-top: 1.5rem;
+       word-break: break-word !important;     
+        hyphens: auto !important;              
+        overflow-wrap: break-word !important;  
+        white-space: normal !important;         
+        line-height: 1.45 !important;         
+
 }
 
 /* ===============================
@@ -1196,3 +1202,4 @@ body {
         font-size: 0.95rem;         /* adjust text size for mobile */
     }
 }
+
