@@ -1,0 +1,919 @@
+.page-header-section {
+    width: 100%; 
+    margin: 0 auto 0 !important;           /* bottom margin fully removed */
+    padding: 6rem 1rem 1.5rem !important;  /* bottom padding drastically reduced */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--card-bg) 0%, var(--primary-bg) 100%);
+    border: 1px solid rgba(0, 0, 0, 0.08); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    border-radius: var(--border-radius);
+}
+
+.page-header-section .page-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--accent-dark);
+    margin: 0 0 1rem 0;
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+}
+
+.page-header-section .page-subtitle {
+    font-size: 1.25rem;
+    color: var(--accent-dark);
+    opacity: 0.8;
+    margin: 0;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+      .filter-box {
+    margin-top: 0rem !important;    
+    margin-bottom: 1.5rem;
+    padding: 1.2rem;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(15, 37, 64, 0.08);
+    z-index: 5;                       
+}
+
+        .filter-box {
+            background-color: var(--card-bg);
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(15, 37, 64, 0.1);
+        }
+
+        .filter-row {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            align-items: flex-end;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            min-width: 180px;
+        }
+
+        .filter-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .filter-group select {
+            padding: 0.75rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+        }
+
+        .reset-btn {
+            background-color: var(--accent-dark);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .reset-btn:hover {
+            background-color: #1a3a5f;
+        }
+.category-filter {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.row.g-3 {
+    margin-top: 0 !important;
+}
+
+        /* Main Content Layout */
+        .publications-main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 992px) {
+            .publications-main-content {
+                grid-template-columns: 300px 1fr;
+            }
+        }
+
+        /* Publication Guide - Fixed, Not Scrollable */
+        .publication-guide {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(15, 37, 64, 0.1);
+            height: fit-content;
+        }
+
+        .publication-guide h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--accent-muted);
+            padding-left: 1rem;
+        }
+
+        .guide-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+
+        .guide-section:last-child {
+            border-bottom: none;
+        }
+
+        .guide-section h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section p {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Publications Header */
+        .publications-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .publications-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin: 0;
+        }
+
+        /* Publication Grid */
+        .publication-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Publication Card */
+        .pub-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .pub-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .pub-status-tag {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            color: white;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 0 4px 4px 0;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+
+        .pub-status-tag.paid {
+            background-color: #d9534f;
+        }
+
+         .pub-status-tag.private {
+            background-color: var(--accent-dark);
+        }
+
+        .pub-status-tag.free {
+            background-color: #5cb85c;
+        }
+
+        .pub-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #eee;
+        }
+
+        .pub-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pub-details {
+            padding: 1rem;
+        }
+
+        .pub-type {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-muted);
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+        }
+
+        .pub-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .pub-price {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--accent-dark);
+            margin-bottom: 1rem;
+        }
+
+        .pub-action-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.65rem;
+            border-radius: 7px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-pay {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        .btn-pay:hover {
+            background-color: #c9302c;
+        }
+
+        .btn-free {
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .btn-free:hover {
+            background-color: #4cae4c;
+        }
+
+         .btn-private {
+          background-color: var(--accent-dark);
+            color: white;
+        }
+
+        .btn-private:hover {
+            background-color: var(--accent-dark);
+        }
+
+        /* Pagination */
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .pagination-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            background-color: white;
+            color: var(--accent-dark);
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .pagination-btn:hover:not(:disabled) {
+            background-color: var(--accent-dark);
+            color: white;
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-btn.active {
+            background-color: var(--accent-dark);
+            color: white;
+        }
+
+        /* Modal Styles */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+                --bs-backdrop-opacity: 0.;
+        }
+
+        .modal-backdrop.show {
+            display: flex;
+        }
+
+        .modal-content-wrapper {
+            background-color: white;
+            border-radius: 12px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .modal-content-wrapper {
+                grid-template-columns: 1fr 1.5fr;
+            }
+        }
+
+        .modal-book-details {
+            background: linear-gradient(135deg, #0f2540 0%, #1a3a5f 100%);
+            color: white;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .modal-book-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+        }
+
+        .modal-book-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-book-info p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-book-price {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-top: 1rem;
+        }
+
+        .modal-form-section {
+            padding: 2rem;
+        }
+
+        .modal-form-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--accent-dark);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-submit {
+            flex: 1;
+            padding: 0.85rem;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #c9302c;
+        }
+
+        .btn-cancel {
+            flex: 1;
+            padding: 0.85rem;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-cancel:hover {
+            background-color: #5a6268;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .paypal-button-wrapper {
+    margin-top: 15px;
+}
+
+.paypal-btn {
+    width: 100%;
+    background-color: #ffc439;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.paypal-btn i {
+    color: #003087;
+    font-size: 18px;
+}
+
+.paypal-btn:hover {
+    background-color: #f2ba36;
+}
+/* ────────────────────────────────────────
+   Mobile-first base adjustments
+───────────────────────────────────────── */
+
+body {
+    font-size: 16px;           /* better base size for mobile */
+    line-height: 1.5;
+}
+
+.page-header-section {
+    padding: 1.5rem 1rem 1rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.page-title {
+    font-size: clamp(2.1rem, 8vw, 2.8rem) !important;
+}
+
+.page-subtitle {
+    font-size: clamp(1.05rem, 4.5vw, 1.25rem) !important;
+}
+
+/* ─────── Filter box ─────── */
+.filter-box {
+    margin-top: 1rem !important;     /* most important fix */
+    margin-bottom: 2rem;
+    padding: 1.25rem;
+}
+
+.filter-row {
+    flex-direction: column;
+    gap: 1.1rem;
+    align-items: stretch;
+}
+
+.filter-group {
+    min-width: auto;
+    width: 100%;
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+}
+
+/* ─────── Main layout ─────── */
+.publications-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Guide first on mobile → content second */
+.publication-guide {
+    order: -1;
+}
+
+/* Publication cards */
+.publication-grid {
+    grid-template-columns: 1fr;         
+    gap: 1.25rem;
+}
+
+.pub-card {
+    font-size: 0.97rem;
+}
+
+.pub-image {
+    height: 180px;                    
+}
+
+.pub-title {
+    font-size: 1.05rem;
+}
+
+.pub-price {
+    font-size: 1.25rem;
+}
+
+.pub-action-btn {
+    padding: 0.8rem;
+    font-size: 0.97rem;
+}
+
+/* Pagination */
+.pagination-container {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.pagination-btn {
+    min-width: 38px;
+    padding: 0.55rem 0.9rem;
+    font-size: 0.9rem;
+}
+
+/* Modal — very important on mobile */
+.modal-backdrop {
+    padding: 0.8rem;
+}
+
+.modal-content-wrapper {
+    max-width: 100%;
+    max-height: 96vh;
+    margin: 0 auto;
+}
+
+.modal-book-details {
+    padding: 1.5rem 1.25rem;
+}
+
+.modal-book-image {
+    max-width: 160px;
+}
+
+.modal-form-section {
+    padding: 1.5rem 1.25rem;
+}
+
+/* ────────────────────────────────────────
+   Larger screens — progressive enhancement
+───────────────────────────────────────── */
+
+@media (min-width: 576px) {
+    .filter-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .filter-group {
+        flex: 1 1 45%;
+    }
+    
+    .reset-btn {
+        flex: 0 0 auto;
+        width: auto;
+        min-width: 140px;
+    }
+}
+
+@media (min-width: 768px) {
+    .page-header-section {
+        padding: 2.5rem 1.5rem 1.5rem !important;
+    }
+    
+    .publication-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .pub-image {
+        height: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .publications-main-content {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 2.5rem;
+    }
+    
+    .publication-guide {
+        position: sticky;
+        top: 1.5rem;
+        align-self: start;
+    }
+    
+    .filter-box {
+        margin-top: 0 !important;
+    }
+    
+    .filter-row {
+        flex-wrap: nowrap;
+    }
+    
+    .filter-group {
+        flex: 1;
+        min-width: 200px;
+    }
+    
+    .reset-btn {
+        flex: 0 0 140px;
+    }
+}
+
+/* Prevent text zoom issues on iOS */
+input, textarea, select {
+    font-size: 16px !important;
+}
+/* Header already full-width irukku – no change needed there */
+
+/* Make main content match header width + symmetric padding */
+.publications-container,
+main.container,
+.publications-main-content {
+    max-width: 1400px;           /* header oda max-width match pannu or 1200px/1300px try pannu */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;        /* left side space */
+    padding-right: 1.5rem;       /* right side space – same value */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Filter box & grid oda parent um same width follow pannanum */
+.filter-box,
+.publication-listings {
+    max-width: 100%;             /* parent container oda limit la irukkum */
+}
+
+/* Remove extra container restrictions if any */
+.container {
+    max-width: 1400px !important;   /* override bootstrap if needed */
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+}
+.publication-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   /* force 3 columns */
+    gap: 1.8rem 1.5rem;                      /* row gap  bigger, column gap normal */
+    margin-bottom: 2.5rem;
+}
+
+/* Card size control */
+.pub-card {
+    min-height: 420px;          /* uniform height – looks clean */
+    display: flex;
+    flex-direction: column;
+}
+
+.pub-image {
+    height: 220px;              /* little bigger cover image */
+    flex-shrink: 0;
+}
+
+.pub-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.2rem;
+}
+
+/* Responsive – breakpoint wise adjust columns */
+@media (max-width: 991px) {
+    .publication-grid {
+        grid-template-columns: repeat(2, 1fr);   /* tablet → 2 columns */
+        gap: 1.6rem;
+    }
+    
+    .pub-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .publication-grid {
+        grid-template-columns: 1fr;              /* mobile → 1 column */
+        gap: 1.4rem;
+    }
+    
+    .pub-image {
+        height: 180px;
+    }
+    
+    .pub-card {
+        min-height: auto;   /* mobile la height auto better */
+    }
+}
+.publication-guide {
+    height: 100%;                      /* parent grid la full height edukkum */
+    min-height: 420px;                 /* minimum card height oda match */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Inner content spread aagum */
+.publication-guide > * {
+    margin-bottom: 1.2rem;
+}
+
+.publication-guide h2 {
+    margin-bottom: 1.4rem;
+}
+
+.guide-section:last-child {
+    margin-bottom: 0;
+}
+.reset-btn {
+    padding: 0.6rem 1.2rem;          /* smaller padding */
+    font-size: 0.92rem;              /* text size konjam reduce */
+    min-width: 100px;                /* not too small */
+    border-radius: 6px;
+}
+
+@media (max-width: 576px) {
+    .reset-btn {
+        padding: 0.55rem 1rem;
+        font-size: 0.9rem;
+        width: 100%;                 /* mobile la full width better */
+    }
+}
+    .publication-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem 1.4rem;              /* row & column gap balanced */
+}
+
+@media (max-width: 992px) {
+    .publication-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .pub-image {
+        height: 190px;
+    }
+}
+
+@media (max-width: 576px) {
+    .publication-grid {
+        grid-template-columns: 1fr;
+        gap: 1.3rem;
+    }
+    
+    .pub-image {
+        height: 170px;               /* small phones la compact */
+    }
+    
+    .pub-card {
+        min-height: auto;
+    }
+}   
+.publications-main-content,
+.publication-listings,
+.filter-box {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 576px) {
+    .publications-main-content,
+    .publication-listings,
+    .filter-box {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+} 
+/* =========================================
+   HEADER → SEARCH GAP CONTROL (ALL DEVICES)
+========================================= */
+
+/* Remove extra bottom spacing from header */
+.page-header-section {
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 0 !important;
+}
+
+/* Remove extra top spacing from filter/search */
+.filter-box {
+    margin-top: -20.25rem !important;
+}
+
+/* Remove any hidden bootstrap row spacing */
+.row.g-3,
+.category-filter {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
