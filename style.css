@@ -109,9 +109,10 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
+/*
 .main-nav {
     display: none;
-}
+}*/
 .main-nav ul {
     list-style: none;
     padding: 0;
@@ -370,32 +371,6 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     color: #ccc;
     font-size: 0.9rem;
-}
-.back-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background: var(--accent-dark);
-    color: white;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-}
-.back-to-top.visible {
-    display: flex;
-}
-.back-to-top:hover,
-.back-to-top:focus {
-    background: #1a3a5f;
-    outline: 2px solid #ffd700;
 }
 @media (min-width: 768px) {
     .main-nav {
@@ -1234,6 +1209,8 @@ html, body {
 gap: 1rem !important;  /* logo text- menu button space */
 }
 }
+
+
 header {
     position: fixed;
     top: 0;
@@ -1274,7 +1251,7 @@ body {
     }
 }
 :root {
-    --header-mobile: 120px;   /* mobile la header height approx */
+    --header-mobile: 120px;   
     --header-desktop: 140px;
 }
 
@@ -1289,5 +1266,42 @@ body {
     
     .hero-section {
         margin-top: 1.5rem;          /* or 2rem */
+    }
+}
+@media (min-width: 768px) {
+    .main-nav {
+        display: block !important;   
+    }
+    .mobile-menu-btn {
+        display: none;              
+    }
+}
+.main-nav {
+    display: none; 
+}
+
+.mobile-menu-btn {
+    display: block; 
+}
+
+@media (min-width: 768px) {
+    .main-nav {
+        display: flex !important;   /* flex or block ok */
+    }
+    .mobile-menu-btn {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main-nav {
+        display: flex !important;
+        flex-wrap: wrap;         
+        gap: 0.5rem;
+    }
+    
+    .main-nav a {
+        padding: 0.4rem 1.0rem !important;  
+        font-size: 0.95rem !important;
     }
 }
