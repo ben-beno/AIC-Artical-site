@@ -28,8 +28,7 @@
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     border-radius: var(--border-radius);
-        margin-top: var(--header-height, 120px);
-
+    margin-top: var(--header-height, 120px);
 }
 .exhibition-header i {
     color: var(--accent-dark);
@@ -468,6 +467,99 @@
         min-height: auto !important;
     }
 }
+/* ──── HIGHLIGHTS SECTION – EXACT 1 ROW DESKTOP LAYOUT FORCE (768px+) ──── */
+
+@media (min-width: 768px) {
+    .highlights-section .highlights-grid {
+        display: flex !important;                  /* flex use pannu for 1 row force */
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;              /* wrap aagadhu – 1 row mattum */
+        gap: 1.5rem !important;
+        overflow-x: auto !important;               /* big screen la overflow illa, small la scroll varum */
+        padding: 1rem 0 !important;
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        scroll-snap-type: x mandatory !important;  /* smooth scroll feel */
+    }
+
+    .highlights-grid img {
+        flex: 0 0 220px !important;                /* fixed width per image */
+        height: 220px !important;
+        object-fit: cover !important;
+        border-radius: 12px !important;
+        scroll-snap-align: start !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    .highlights-grid img:hover {
+        transform: scale(1.05) !important;
+    }
+
+    .highlights-section {
+        padding: 2.5rem 1.5rem !important;
+    }
+
+    .highlights-section h2 {
+        font-size: 2.5rem !important;
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .highlights-section p {
+        font-size: 1.2rem !important;
+        text-align: center !important;
+        max-width: 900px !important;
+        margin: 0 auto 2.5rem !important;
+    }
+}
+
+/* iPad portrait (768–1024px) la kooda exact 1 row desktop feel */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .highlights-grid {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 1.2rem !important;
+        overflow-x: auto !important;
+    }
+
+    .highlights-grid img {
+        flex: 0 0 200px !important;      /* iPad la konjam compact */
+        height: 200px !important;
+    }
+}
+
+/* iPad landscape & desktop – full 1 row spread */
+@media (min-width: 1024px) {
+    .highlights-grid {
+        flex-wrap: wrap !important;      /* very big screen la wrap aagattum if needed */
+        justify-content: center !important;
+    }
+
+    .highlights-grid img {
+        flex: 0 0 240px !important;
+        height: 240px !important;
+    }
+}
+
+/* Mobile la mattum stack pannu (2 or 1 column) */
+@media (max-width: 767px) {
+    .highlights-grid {
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        gap: 1.2rem !important;
+        overflow-x: hidden !important;
+    }
+
+    .highlights-grid img {
+        width: 100% !important;
+        height: 180px !important;
+    }
+
+    .highlights-section {
+        padding: 1.5rem 1rem !important;
+    }
+} 
+
     </style>
 </head>
 <body>
@@ -492,7 +584,6 @@
                     </li>
                     <li class="dropdown-parent"><a href="./archive.html" class="{{ Route::is('client.archivecentrecollection') ? 'active' : '' }}" aria-haspopup="true">Archive Centre</a>
                     <li class="dropdown-parent"><a href="./HeritageCentre.html" aria-haspopup="true">Exhibition </a>
-                   
                     <li class="dropdown-parent">
                         <a href="#" aria-haspopup="true">Join</a>
                         <div class="dropdown" role="menu">
@@ -526,7 +617,6 @@
             </li>
             <li><a href="./archive.html">Archive Centre</a></li>
             <li><a href="./Heritage Hub.html">Exhibition</a></li>
-          
             <li>
                 <button class="mobile-dropdown-toggle" data-target="joinDropdown" aria-expanded="false">Join <span>▾</span></button>
                 <div class="mobile-dropdown-content" id="joinDropdown">
@@ -670,7 +760,7 @@
             </div>
             <div class="info-card">
                 <i class="fas fa-map-marker-alt"></i>
-                 <h3>Location</h3>
+                <h3>Location</h3>
                  <P>Tamil Information Centre <br>
                                 123 Heritage Lane <br>
                                 London,<BR> WC1X 0AA <br>
@@ -678,7 +768,7 @@
                 <p><strong>Transport:</strong> Bus 138, 154<br>Train: London metro </p>
                 <p class="alert-text">Free on-site parking available</p>
             </div>
-            <div class="info-card">
+            <div class="info-card">               
                 <i class="fas fa-universal-access"></i>
                 <h3>Accessibility</h3>
                 <ul>
@@ -871,7 +961,3 @@ document.addEventListener('DOMContentLoaded', function () {
 </a>
 </body>
 </html>
-
-
-
-
