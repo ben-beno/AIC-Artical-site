@@ -373,22 +373,19 @@ a:hover {
     }
 }
 
-/* Update this section in your contact.css file */
 
-/* Desktop/Large Screens (≥ 768px) - Center the grid with proper gaps */
 @media (min-width: 768px) {
     .contact-grid-section {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
-        max-width: 1200px; /* Limit maximum width */
-        margin: 2rem auto 0 auto; /* Center horizontally with auto margins */
-        padding: 0 20px; /* Add padding on sides for breathing room */
+        max-width: 1200px;
+        margin: 2rem auto 0 auto; 
+        padding: 0 20px; 
         width: 100%;
         box-sizing: border-box;
     }
     
-    /* Ensure cards have equal height and proper spacing */
     .enquiry-form-container,
     .contact-info-container {
         width: 100%;
@@ -439,7 +436,6 @@ a:hover {
         align-items: stretch; /* This makes both columns stretch to same height */
     }
     
-    /* Make both containers full height */
     .enquiry-form-container,
     .contact-info-container {
         width: 100%;
@@ -450,14 +446,12 @@ a:hover {
         flex-direction: column;
     }
     
-    /* Make the contact info content take available space */
     .contact-info-container {
         justify-content: flex-start; /* Align content to top */
     }
     
-    /* Optional: If you want the content in contact info to be vertically centered */
     .contact-info-container {
-        justify-content: center; /* Uncomment this if you want content centered vertically */
+        justify-content: center; 
     }
 }
 
