@@ -1,6 +1,3 @@
-   /* ===================================================
-   GLOBAL VARIABLES AND BASE STYLES
-   =================================================== */
 :root {
     --primary-bg: #f6e3c5;
     --accent-dark: #0f2540;
@@ -15,9 +12,7 @@
 }
 
 body {
-    /* Updated font family and added uppercase transformation */
     font-family: "Georgia", "Times New Roman", serif;
-    
     background-color: var(--primary-bg);
     color: var(--accent-dark);
     line-height: 1.6;
@@ -26,7 +21,8 @@ body {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
-}/* Skip to content link for accessibility */
+}
+
 .skip-link {
     position: absolute;
     top: -40px;
@@ -44,8 +40,6 @@ body {
     outline: 3px solid #ffd700;
 }
 
-
-/* Navigation Styles (Desktop) */
 .main-nav {
     display: none;
 }
@@ -86,7 +80,6 @@ body {
     color: white;
 }
 
-/* Dropdown Styles */
 .dropdown-parent {
     position: relative;
 }
@@ -114,7 +107,6 @@ body {
     display: block;
 }
 
-/* Mobile Menu Button */
 .mobile-menu-btn {
     display: block;
     background: var(--accent-dark);
@@ -135,7 +127,6 @@ body {
     outline-offset: 2px;
 }
 
-/* Mobile Navigation Offcanvas */
 .mobile-nav-offcanvas {
     position: fixed;
     top: 0;
@@ -206,34 +197,25 @@ body {
     color: white;
 }
 
-
-
-/* ===================================================
-   ABOUT PAGE & COMMON STYLES
-   =================================================== */
 main {
     max-width: 1400px;
     margin: 0 auto;
     padding: 1rem 1.5rem;
 }
-/* About Page Hero Section Style */
+
 .about-header {
     width: 100%; 
-    
     margin: 0 auto 4rem auto; 
-    
     text-align: center;
     display: flex;
     padding: 8rem 1rem 5rem; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     background: linear-gradient(to bottom, var(--card-bg) 0%, var(--primary-bg) 100%);
     border: 1px solid rgba(0, 0, 0, 0.08); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
-    border-radius: var(--border-radius); /* Rounded corners */
-   
+    border-radius: var(--border-radius);
 }
 
 .about-header h1 {
@@ -252,29 +234,29 @@ main {
     margin: 0;
     max-width: 800px; 
 }
+
 .about-section {
     background-color: var(--card-bg);
-  padding: 5rem 5.5rem;
-    margin-top:  -10.5rem;
+    padding: 5rem 5.5rem;
+    margin-top: -10.5rem;
     border-radius: var(--border-radius);
-    
 }
 
 .about-section h2 {
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
     color: var(--accent-dark);
+    text-align: center;
 }
+
 .about-section.guiding-principle {
     max-width: 1100px;
-    margin: 0 auto;              /* center align */
-    padding: 5rem 5.5rem;        /* internal spacing */
+    margin: 0 auto;
+    padding: 5rem 5.5rem;
     text-align: center;
     position: relative;
 }
 
-
-/* CONTAINER */
 .vision-mission {
     display: grid;
     grid-template-columns: 1fr;
@@ -284,14 +266,12 @@ main {
     padding: 4rem 1.5rem;
 }
 
-/* Cards container for Vision & Mission */
 .vm-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
 }
 
-/* ALL CARDS */
 .vm-card {
     background: var(--card-bg);
     padding: 2.2rem;
@@ -309,7 +289,6 @@ main {
     background: var(--hover-bg);
 }
 
-/* Intro Card - Full Width */
 .vm-intro {
     grid-column: 1 / -1;
     text-align: center;
@@ -328,7 +307,6 @@ main {
     color: #000000;
 }
 
-/* ICONS */
 .vm-card .icon-wrapper {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -344,7 +322,6 @@ main {
     transform: scale(1.2) rotate(10deg);
 }
 
-/* HEADINGS */
 .vm-card h3 {
     font-size: 2.5rem;
     color: var(--accent-dark);
@@ -363,7 +340,6 @@ main {
     background: linear-gradient(to right, var(--accent-muted), var(--accent-dark));
 }
 
-/* LISTS */
 .vm-card ul {
     padding-left: 1.2rem;
     margin-top: 1rem;
@@ -380,13 +356,11 @@ main {
     font-weight: bold;
 }
 
-/* MISSION intro */
 .mission-intro {
     margin-bottom: 1rem;
     line-height: 1.6;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .vm-cards {
         grid-template-columns: 1fr;
@@ -414,8 +388,7 @@ main {
 .join-today {
     background-color: white;
     color: var(--accent-dark);
-        border-radius: #0f2540;
-
+    border-radius: #0f2540;
 }
 
 .join-today:hover {
@@ -425,7 +398,7 @@ main {
 .peace-building, .work-partners {
     padding: 1.5rem;
     margin: 2rem 8REM;
-     max-width: 1100px;
+    max-width: 1100px;
     border-radius: var(--border-radius);
 }
 
@@ -433,17 +406,16 @@ main {
     background-color: var(--card-bg);
 }
 
-
 .peace-building h2,
- .work-partners h2 {
-    color:  #0f2540;
+.work-partners h2 {
+    color: #0f2540;
     padding-bottom: 0.5rem;
-        text-align: center;
+    text-align: center;
 }
 
 .work-partners {
     background-color: var(--card-bg);
-    color:  #0f2540;
+    color: #0f2540;
     text-align: center;
     padding: 2rem;
 }
@@ -457,7 +429,6 @@ main {
     margin-bottom: 1rem;
 }
 
-/* Mobile dropdown styles */
 .mobile-dropdown-parent {
     position: relative;
 }
@@ -483,7 +454,6 @@ main {
     transform: rotate(180deg);
 }
 
-/* TIC at a Glance */
 .tic-glance h2 {
     text-align: center;
     margin-bottom: 4rem;
@@ -503,7 +473,7 @@ main {
 }
 
 .glance-grid {
-    display:contents;
+    display: contents;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
@@ -529,7 +499,7 @@ main {
 }
 
 .glance-flip-card:hover .glance-flip-inner {
-   transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 .glance-front, .glance-back {
@@ -590,7 +560,7 @@ main {
     width: 100%;
     flex-wrap: wrap;
 }
-/* TIC Intro Card */
+
 .tic-intro {
     background: var(--card-bg);
     padding: 2.5rem 2rem;
@@ -613,6 +583,7 @@ main {
     line-height: 1.7;
     color: #000;
 }
+
 .tic-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -620,22 +591,18 @@ main {
     justify-items: center;
 }
 
-
-/* Accordion FAQ Styles (New - Replaces old details/summary) */
 .faq h2 {
     color: var(--accent-dark);
     padding-bottom: 0.5rem;
     text-align: center;
     font-size: 2rem;
     margin: 2rem 0;
-    
 }
 
 .faq-accordion {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    
 }
 
 .faq-item {
@@ -677,7 +644,6 @@ main {
     transform: rotate(45deg);
 }
 
-/* Optional: Show − instead of rotated + */
 .faq-question[aria-expanded="true"] .icon::before {
     content: "−";
 }
@@ -690,7 +656,7 @@ main {
 }
 
 .faq-answer.open {
-    max-height: 500px; /* Increased for longer content */
+    max-height: 500px;
     padding: 1rem 1.5rem 1.5rem;
     border-top: 1px solid rgba(15, 37, 64, 0.1);
 }
@@ -705,16 +671,10 @@ main {
     outline-offset: -3px;
 }
 
-/* ===================================================
-   RESPONSIVE DESIGN (Media Queries)
-   =================================================== */
 @media (min-width: 768px) {
     .main-nav { display: block; }
     .mobile-menu-btn { display: none; }
-   
 }
-
-
 
 @media (max-width: 1200px) {
     .glance-grid { justify-content: center; }
@@ -722,237 +682,230 @@ main {
     .second-row-wrapper { justify-content: center; }
 }
 
-
-
-
-
-/* Tamil News Section Specific */
 .news-section .footer-desc {
     color: #ccc;
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 1rem;
 }    
-    .news-section {
-        grid-column: span 1;
-        text-align: center;
-    }
-    
-    
-  
-/* Grid Layout */
+
+.news-section {
+    grid-column: span 1;
+    text-align: center;
+}
+
+.glance-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.second-row-wrapper {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.glance-card {
+    width: 100%;
+    max-width: 280px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.glance-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.glance-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.3));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.glance-card:hover::before {
+    opacity: 1;
+}
+
+.icon-wrapper {
+    text-align: center;
+    padding: 30px 0 20px;
+    background: #f0f4f8;
+    transition: all 0.4s ease;
+}
+
+.icon-wrapper i {
+    color: #3b82f6;
+    transition: transform 0.4s ease;
+}
+
+.glance-card:hover .icon-wrapper i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.glance-content {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.glance-content h3 {
+    margin: 0 0 10px;
+    color: #333;
+    font-size: 1.6rem;
+}
+
+.glance-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
     .glance-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 20px;
+        grid-template-columns: repeat(2, 1fr);
     }
-
     .second-row-wrapper {
-        grid-column: 1 / -1; /* Full width for second row */
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
     }
+}
 
-    .glance-card {
-        width: 100%;
-        max-width: 280px;
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        transition: all 0.4s ease;
-        cursor: pointer;
-        position: relative;
-    }
-
-    .glance-card:hover {
-        transform: translateY(-15px) scale(1.05);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    }
-
-    .glance-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.3));
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        z-index: 1;
-    }
-
-    .glance-card:hover::before {
-        opacity: 1;
-    }
-
-    .icon-wrapper {
-        text-align: center;
-        padding: 30px 0 20px;
-        background: #f0f4f8;
-        transition: all 0.4s ease;
-    }
-
-    .icon-wrapper i {
-        color: #3b82f6; /* Blue theme */
-        transition: transform 0.4s ease;
-    }
-
-    .glance-card:hover .icon-wrapper i {
-        transform: scale(1.2) rotate(10deg);
-    }
-
-    .glance-content {
-        padding: 20px;
-        text-align: center;
-        position: relative;
-        z-index: 2;
-    }
-
-    .glance-content h3 {
-        margin: 0 0 10px;
-        color: #333;
-        font-size: 1.6rem;
-    }
-
-    .glance-content p {
-        color: #666;
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin: 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-        .glance-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        .second-row-wrapper {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .glance-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-    .tic-glance h2 {
-        text-align: center;
-        color: var(--accent-dark);
-        margin-bottom: 40px;
-    }
-
+@media (max-width: 768px) {
     .glance-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 20px;
+        grid-template-columns: 1fr;
     }
+}
 
-    .second-row-wrapper {
-        grid-column: 1 / -1;
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
-    }
+.tic-glance h2 {
+    text-align: center;
+    color: var(--accent-dark);
+    margin-bottom: 40px;
+}
 
-    .glance-card {
-        width: 100%;
-        max-width: 280px;
-        background: var(--card-bg);
-        border-radius: var(--border-radius);
-        box-shadow: 0 10px 30px rgba(15, 37, 64, 0.1);
-        overflow: hidden;
-        transition: all 0.4s ease;
-        cursor: pointer;
-        position: relative;
-    }
+.glance-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
 
-    .glance-card:hover {
-        transform: translateY(-15px) scale(1.05);
-        box-shadow: 0 20px 40px rgba(15, 37, 64, 0.2);
-        background: var(--hover-bg);
-    }
+.second-row-wrapper {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
 
-    .glance-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(191, 169, 139, 0.2), rgba(15, 37, 64, 0.3));
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        z-index: 1;
-    }
+.glance-card {
+    width: 100%;
+    max-width: 280px;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(15, 37, 64, 0.1);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+}
 
-    .glance-card:hover::before {
-        opacity: 1;
-    }
+.glance-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(15, 37, 64, 0.2);
+    background: var(--hover-bg);
+}
 
-    .icon-wrapper {
-        text-align: center;
-        padding: 30px 0 20px;
-        background: rgba(246, 227, 197, 0.5);
-        transition: all 0.4s ease;
-    }
+.glance-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(191, 169, 139, 0.2), rgba(15, 37, 64, 0.3));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
 
-    .icon-wrapper i {
-        color: var(--accent-dark);
-        transition: all 0.4s ease;
-    }
+.glance-card:hover::before {
+    opacity: 1;
+}
 
-    .glance-card:hover .icon-wrapper i {
-        color: var(--accent-muted);
-        transform: scale(1.2) rotate(10deg);
-    }
+.icon-wrapper {
+    text-align: center;
+    padding: 30px 0 20px;
+    background: rgba(246, 227, 197, 0.5);
+    transition: all 0.4s ease;
+}
 
-    .glance-content {
-        padding: 20px;
-        text-align: center;
-        position: relative;
-        z-index: 2;
-    }
+.icon-wrapper i {
+    color: var(--accent-dark);
+    transition: all 0.4s ease;
+}
 
-    .glance-content h3 {
-        margin: 0 0 10px;
-        color: var(--accent-dark);
-        font-size: 1.6rem;
-    }
+.glance-card:hover .icon-wrapper i {
+    color: var(--accent-muted);
+    transform: scale(1.2) rotate(10deg);
+}
 
-    .glance-content .details {
-        display: none; /* Default hide details */
-        color: #000000; /* Dark black text */
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin: 15px 0 0;
-    }
+.glance-content {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
 
-    .glance-card:hover .details {
-        display: block; /* Show on hover */
-    }
+.glance-content h3 {
+    margin: 0 0 10px;
+    color: var(--accent-dark);
+    font-size: 1.6rem;
+}
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-        .glance-grid { grid-template-columns: repeat(2, 1fr); }
-        .second-row-wrapper { flex-direction: column; align-items: center; }
-    }
+.glance-content .details {
+    display: none;
+    color: #000000;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 15px 0 0;
+}
 
-    @media (max-width: 768px) {
-        .glance-grid { grid-template-columns: 1fr; }
-    }
+.glance-card:hover .details {
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .glance-grid { grid-template-columns: repeat(2, 1fr); }
+    .second-row-wrapper { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 768px) {
+    .glance-grid { grid-template-columns: 1fr; }
+}
+
 :root {
     --primary-bg:#f6e3c5;;
     --primary-gold: #c5a059;
@@ -963,19 +916,14 @@ main {
     --border-radius: 12px;
 }
 
-/* ===============================
-   BASE
-================================ */
 body {
     background-color:#f6e3c5;;
     font-family: 'Inter', sans-serif;
     color: var(--accent-dark);
     overflow-x: hidden;
+
 }
 
-/* ===============================
-   HERO SECTION
-================================ */
 .archive-hero {
     background-color: #e2caa8;
     padding: 50px 20px;
@@ -998,17 +946,13 @@ body {
     opacity: 0.85;
     border-top: 1px solid var(--accent-muted);
     padding-top: 1.5rem;
-       word-break: break-word !important;     
-        hyphens: auto !important;              
-        overflow-wrap: break-word !important;  
-        white-space: normal !important;         
-        line-height: 1.45 !important;         
-
+    word-break: break-word !important;     
+    hyphens: auto !important;              
+    overflow-wrap: break-word !important;  
+    white-space: normal !important;         
+    line-height: 1.45 !important;         
 }
 
-/* ===============================
-   ESTABLISHED TEXT
-================================ */
 .established-text {
     text-align: center;
     font-weight: 700;
@@ -1018,9 +962,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* ===============================
-   ARCHIVE CONTENT
-================================ */
 .archive-history {
     max-width: 900px;
     margin: auto;
@@ -1049,9 +990,6 @@ body {
     text-align: justify;
 }
 
-/* ===============================
-   HIGHLIGHT / LEGACY
-================================ */
 .highlight-box {
     background-color: var(--card-bg);
     padding: 30px;
@@ -1076,9 +1014,6 @@ body {
     color: var(--accent-red);
 }
 
-/* ===============================
-   RESPONSIVE
-================================ */
 @media (max-width: 768px) {
     .archive-hero h1 {
         font-size: 2.5rem;
@@ -1098,71 +1033,65 @@ body {
 }
 
 @media (max-width: 767px) {
-    /* Common for both sections */
     .about-section,
     .work-partners {
-        padding: 2rem 1.5rem !important;   /* smaller padding for mobile */
-        margin-top: 0 !important;           /* negative margin remove pannu */
+        padding: 2rem 1.5rem !important;  
+        margin-top: 0 !important;          
         margin-bottom: 2rem;
-        text-align: center;                 /* h2 & p center aagum */
-        background: var(--card-bg);         /* background clear aagum */
+        text-align: center;                
+        background: var(--card-bg);       
         border-radius: var(--border-radius);
     }
 
-    /* h2 mobile la smaller & bold */
     .about-section h2,
     .work-partners h2 {
         font-size: 1.8rem;
         margin-bottom: 1rem;
         padding-bottom: 0.5rem;
-        border-bottom: 2px solid var(--accent-muted); /* optional underline for separation */
+        border-bottom: 2px solid var(--accent-muted); 
     }
 
-    /* Paragraphs mobile la readable */
     .about-section p,
     .work-partners p {
         font-size: 1rem;
         line-height: 1.7;
         margin-bottom: 1.5rem;
-        text-align: left;                   /* center venumna center pannu, left better readability ku */
-        max-width: 100%;                    /* full width use pannum */
+        text-align: left;                  
+        max-width: 100%;                  
         padding: 0 0.5rem;
     }
 
-    /* Join Today button mobile la big touch target */
     .join-today {
         display: inline-block;
         margin-top: 1.5rem;
         padding: 0.9rem 2rem;
         font-size: 1.1rem;
-        min-width: 200px;                   /* easy touch */
+        min-width: 200px;                  
         text-align: center;
     }
 
-    /* Extra space sections kulla */
     .about-section.peace-building,
     .work-partners {
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* light shadow for separation */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
 }
+
 @media (max-width: 767px) {
-    /* Rendu sections kum common fix */
     .about-section.peace-building,
     .work-partners {
-        width: 95% !important;              /* width increase - almost full screen */
-        max-width: 100%;                    /* no restriction */
+        width: 95% !important;
+        max-width: 100%;
         margin-left: auto;
         margin-right: auto;
-        padding: 1.8rem 1.2rem !important;  /* padding reduce to make height shorter */
-        margin-top: 0 !important;           /* negative margin eduthu */
+        padding: 1.8rem 1.2rem !important;
+        margin-top: 0 !important;           
         margin-bottom: 1.5rem;
-        text-align: left;                   /* left align better readability ku */
+        text-align: left;
         background: var(--card-bg);
         border-radius: var(--border-radius);
         box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    /* h2 smaller & tight */
     .about-section.peace-building h2,
     .work-partners h2 {
         font-size: 1.7rem;
@@ -1170,17 +1099,15 @@ body {
         padding-bottom: 0.4rem;
     }
 
-    /* p text compact & readable */
     .about-section.peace-building p,
     .work-partners p {
         font-size: 0.98rem;
         line-height: 1.65;
         margin-bottom: 1rem;
         padding: 0 0.3rem;
-        text-align: justify;                /* justify pannina neat look varum */
+        text-align: justify;               
     }
 
-    /* Join Today button mobile la neat */
     .work-partners .join-today {
         margin-top: 1rem;
         padding: 0.8rem 1.8rem;
@@ -1188,22 +1115,24 @@ body {
         min-width: 180px;
     }
 }
+
 @media (max-width: 768px) {
     .archive-hero h1,
     .archive-hero .archive-tagline {
-        white-space: nowrap;        /* keep in a single line */
-        overflow: hidden;           /* hide overflow */
-        text-overflow: ellipsis;    /* show ... if text too long */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .archive-hero h1 {
-        font-size: 1.4rem;          /* scale down for mobile */
+        font-size: 1.4rem;
     }
 
     .archive-hero .archive-tagline {
-        font-size: 0.95rem;         /* adjust text size for mobile */
+        font-size: 0.95rem;
     }
 }
+
 @media (max-width: 767px) {
     .tic-glance .glance-grid {
         display: flex !important;
@@ -1227,5 +1156,73 @@ body {
         gap: 1.5rem !important;
     }
 }
+/* ──── TIC-GLANCE DESKTOP LAYOUT FORCE ON iPAD & TABLETS ──── */
 
+ @media (min-width: 768px) {
+    .tic-glance .glance-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 30px !important;
+        padding: 40px 20px !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+    }
 
+    .tic-glance .second-row-wrapper {
+        grid-column: 1 / -1 !important;
+        display: flex !important;
+        justify-content: center !important;
+        gap: 30px !important;
+        flex-wrap: wrap !important;
+    }
+
+    .tic-glance .glance-card,
+    .tic-glance .glance-flip-card {
+        max-width: 280px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .tic-glance .glance-grid,
+    .tic-glance .second-row-wrapper {
+        flex-direction: row !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .tic-glance .glance-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 24px !important;         
+        padding: 30px 15px !important;
+    }
+
+    .tic-glance .glance-card,
+    .tic-glance .glance-flip-card {
+        max-width: 240px !important;   
+    }
+
+    .tic-glance h2 {
+        font-size: 2.2rem !important;
+        margin-bottom: 2.5rem !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .tic-glance .glance-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 30px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .tic-glance .glance-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 20px 10px !important;
+    }
+    
+    .tic-glance .second-row-wrapper {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+}
