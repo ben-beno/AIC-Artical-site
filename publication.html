@@ -9,13 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
       <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./publication.css">
-    
-    
+            <link rel="stylesheet" href="./publication.css">
 
-
-        
+       <style>
     </style>
+
 </head>
 <body>
   <!-- Header -->
@@ -51,7 +49,6 @@
                             </a>
                             <div class="dropdown" role="menu">
                                 <a href="./aboutus.html" role="menuitem">About Us</a>
-                                 <!-- <a href="./news.html" role="menuitem">News</a>  -->
                                 <a href="./supportus.html" role="menuitem">Support Us</a>
                             </div>
                         </li>
@@ -61,12 +58,10 @@
                                aria-haspopup="true">
                                 Archive Centre
                             </a>
-                           
+
                         <li class="dropdown-parent">
                             <a href="./HeritageCentre.html" aria-haspopup="true">Exhibition </a>
-                         
 
-                     
 
                         <li class="dropdown-parent">
                             <a href="#" aria-haspopup="true">Join</a>
@@ -126,9 +121,7 @@
                 </li>
                     <li><a href="./archive.html">  Archive Centre </a></li>
 
-             
                          <li><a href="./Heritage Hub.html">   Exhibition</a></li>
-                
 
                 <li>
                     <button class="mobile-dropdown-toggle" data-target="joinDropdown" aria-expanded="false">
@@ -709,12 +702,6 @@ function handleSubmit(event) {
     closeModal();
 }
 
-// // Download Free Publication
-// function downloadFree(bookId) {
-//     const book = publications.find(pub => pub.id === bookId);
-//     alert(`Downloading: ${book.title}\n\nYour download will begin shortly.`);
-//     // Add actual download logic here
-// }
 
 function downloadFree(bookId) {
    const filePath = 'image/e5.jpg'; // Path to your local image
@@ -728,8 +715,7 @@ function downloadFree(bookId) {
   link.click();
   document.body.removeChild(link);
 
-//   alert(`Downloading: ${fileName}\nYour download will begin shortly.`);
-}
+ }
 
 
 // Close modal on backdrop click
@@ -881,6 +867,4 @@ renderPublications(1);
 </a>
 
 </body>
-
 </html>
-
