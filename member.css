@@ -256,22 +256,6 @@
         margin: 20px 10px;
     }
 }
-/* :root {
-            --primary-bg:#f6e3c5;
-            --accent-dark: #0f2540;
-            --accent-muted: #bfa98b;
-            --card-bg: #f6ece0;
-            --hover-bg: #e6d3bd;
-            --border-radius: 12px;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-        } */
-
         .document-section {
             max-width: 850px; /* Reducing max-width for 2-column layout */
             margin: 10px auto;
@@ -307,7 +291,6 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             padding: 20px;
-          
             width: calc(50% - 10px); /* 50% width minus half the gap (20px / 2 = 10px) */
             box-sizing: border-box;
             text-align: left;
@@ -347,13 +330,11 @@
             color: #8b0000;
         }
 
-       
         @media (max-width: 650px) {
             .document-card {
                 width: 100%; /* One card per row on small screens */
             }
         }
-        /* Apply Now Button Style */
 .apply-box {
     background: white;
     padding: 2.5rem;
@@ -404,9 +385,8 @@
 }
 
 .cards-section {
-    margin-top: -15.5rem;    
+    margin-top: -15.5rem;     
 }
-
 
 footer {
     width: 100%;
@@ -448,6 +428,3 @@ footer {
     .footer-bottom {
     }
 }
-
-
-
